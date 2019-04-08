@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class KickBall : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject powerMeter;
+    [SerializeField] private Text scoreLabel;
     public float kickDistance = 3f;
     public float kickForce = 300f;
     public float canKickAngle = 45f;
     public float kickYComponent = 1000f;
-    float maxPower = 5;
+    private float maxPower = 5;
+    private int _score;
 
     private float timeSpacePressed = 0;
 
@@ -18,7 +21,8 @@ public class KickBall : MonoBehaviour
     void Start()
     {
         powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-
+        _score = 0;
+        scoreLabel.text = "Strokes: " + _score.ToString();
     }
 
     // Update is called once per frame
@@ -42,9 +46,14 @@ public class KickBall : MonoBehaviour
             //Vector3 direction = generateKickDirection();
             Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
+            _score += 1;
+            scoreLabel.text = "Strokes: " + _score.ToString();
+        }else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
 
         }
-        /*
+        /*  
         if (Input.GetKey(KeyCode.Space) && IsBallNearby())
         {
             Vector3 kickPosition = transform.position;

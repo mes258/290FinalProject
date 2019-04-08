@@ -45,6 +45,14 @@ public class FPSInput : MonoBehaviour
 
         movement.y = gravity;
 
+        if (Input.GetKey(KeyCode.J))
+        {
+            if (transform.localPosition.y < 25)
+            {
+                movement.y = 15;
+            }
+        }
+
         movement *= Time.deltaTime;
         movement = transform.TransformDirection(movement);
         _charController.Move(movement);
@@ -58,7 +66,9 @@ public class FPSInput : MonoBehaviour
             transform.Rotate(new Vector3(0f, -1 * rotateSpeed, 0f));
         }
 
+
     }
+
 
     private void OnSpeedChanged(float value)
     {
