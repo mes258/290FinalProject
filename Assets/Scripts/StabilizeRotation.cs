@@ -14,6 +14,6 @@ public class StabilizeRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    transform.rotation = rotation;
+        transform.rotation = rotation;
     }
 }
