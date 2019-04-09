@@ -17,6 +17,8 @@ public class KickBall : MonoBehaviour
     private Vector3 lastKnownPlayerLocation;
     private Vector3 lastKnownBallLocation;
 
+    private bool cancelled = false;
+
     private float timeSpacePressed = 0;
 
     // Start is called before the first frame update
@@ -34,17 +36,23 @@ public class KickBall : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            cancelled = false;
             timeSpacePressed = Time.time;
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !cancelled)
         {
             powerMeter.transform.localScale = new Vector3(1.0f, Mathf.Min(Time.time - timeSpacePressed, maxPower), 1.0f);
         }
-        if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward())
+        if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward() && !cancelled)
         {
             powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
+            resetPower();
+
+            //log positions
             lastKnownPlayerLocation = transform.localPosition;
             lastKnownBallLocation = ball.transform.localPosition;
+
+            //make direction
             float diff = Mathf.Min(Time.time - timeSpacePressed, maxPower);
             Vector3 kickPosition = transform.position;
             kickPosition.y = kickPosition.y - 1.2f;
@@ -53,10 +61,22 @@ public class KickBall : MonoBehaviour
             Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
             _score += 1;
-            scoreLabel.text = "Strokes: " + _score.ToString();
-        }else if (Input.GetKeyUp(KeyCode.Space))
+            //scoreLabel.text = "Strokes: " + _score.ToString();
+            updateScore();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) && !cancelled)
         {
-            powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
+            //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
+            resetPower();
+            _score += 1;
+            //scoreLabel.text = "Strokes: " + _score.ToString();
+            updateScore();
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            cancelled = true;
+            resetPower();
         }
 
 
@@ -66,7 +86,8 @@ public class KickBall : MonoBehaviour
             transform.localPosition = lastKnownPlayerLocation;
             ball.transform.localPosition = lastKnownBallLocation;
             _score += 1;
-            scoreLabel.text = "Strokes: " + _score.ToString();
+            //scoreLabel.text = "Strokes: " + _score.ToString();
+            updateScore();
         }
         else if (transform.localPosition.y < 0)
         {
@@ -76,7 +97,8 @@ public class KickBall : MonoBehaviour
         {
             ball.transform.localPosition = lastKnownBallLocation;
             _score += 2;
-            scoreLabel.text = "Strokes: " + _score.ToString();
+            //scoreLabel.text = "Strokes: " + _score.ToString();
+            updateScore();
         }
 
 
@@ -88,6 +110,16 @@ public class KickBall : MonoBehaviour
             Vector3 direction = (ball.transform.position - kickPosition).normalized;
             ball.GetComponent<Rigidbody>().AddForce( direction * kickForce );
         }*/
+    }
+
+    void resetPower()
+    {
+        powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
+    }
+
+    void updateScore()
+    {
+        scoreLabel.text = "Strokes: " + _score.ToString();
     }
 
     bool IsBallNearby()

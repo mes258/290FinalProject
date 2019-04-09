@@ -57,7 +57,7 @@ public class FPSInput : MonoBehaviour
                 vertspeed = 10;
             }
 
-            else
+            else if(vertspeed < 0)
             {
                 vertspeed = 0;
             }
@@ -87,10 +87,10 @@ public class FPSInput : MonoBehaviour
 
     private bool isGrounded()
     {
-        Vector3 center = transform.position;
+        Vector3 top = transform.position + new Vector3(0, 1, 0);
         Vector3 down = new Vector3(0, -1, 0);
         RaycastHit hit;
 
-        return Physics.SphereCast(center, 1f, down, out hit, 0.1f);
+        return Physics.SphereCast(top, 1.1f, down, out hit, 1f);
     }
 }
