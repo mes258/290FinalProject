@@ -13,7 +13,10 @@ public class FPSInput : MonoBehaviour
     public float speed = 6.0f;
     public float sideSpeed = 4.0f;
     public float rotateSpeed = 4.0f;
+
+    private float vertspeed = 0;
     public float gravity = -9.8f;
+    public float maxFall = -20f;
 
     private CharacterController _charController;
     private Animator animator;
@@ -43,17 +46,26 @@ public class FPSInput : MonoBehaviour
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
 
-        movement.y = gravity;
 
-        if (Input.GetKey(KeyCode.J))
+        vertspeed = Mathf.Clamp(vertspeed - (gravity * Time.deltaTime), maxFall, 100f);
+        //Debug.Log(vertspeed);
+        if(isGrounded())
         {
-            if (transform.localPosition.y < 25)
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                movement.y = 15;
+               //Debug.Log("Jdown");
+                vertspeed = 10;
+            }
+
+            else
+            {
+                vertspeed = 0;
             }
         }
+        movement.y = vertspeed;
 
         movement *= Time.deltaTime;
+
         movement = transform.TransformDirection(movement);
         _charController.Move(movement);
 
@@ -71,5 +83,14 @@ public class FPSInput : MonoBehaviour
     private void OnSpeedChanged(float value)
     {
         speed = baseSpeed * value;
+    }
+
+    private bool isGrounded()
+    {
+        Vector3 center = transform.position;
+        Vector3 down = new Vector3(0, -1, 0);
+        RaycastHit hit;
+
+        return Physics.SphereCast(center, 1f, down, out hit, 0.1f);
     }
 }
