@@ -65,8 +65,6 @@ public class FPSInput : MonoBehaviour
         {
             transform.Rotate(new Vector3(0f, -1 * rotateSpeed, 0f));
         }
-
-
     }
 
 

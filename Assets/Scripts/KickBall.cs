@@ -57,14 +57,29 @@ public class KickBall : MonoBehaviour
         }else if (Input.GetKeyUp(KeyCode.Space))
         {
             powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-
         }
 
-        if(transform.localPosition.y < 0 || ball.transform.localPosition.y < 0)
+
+
+        if (Input.GetKeyUp(KeyCode.M))
         {
             transform.localPosition = lastKnownPlayerLocation;
             ball.transform.localPosition = lastKnownBallLocation;
+            _score += 1;
+            scoreLabel.text = "Strokes: " + _score.ToString();
         }
+        else if (transform.localPosition.y < 0)
+        {
+            transform.localPosition = lastKnownPlayerLocation;
+        }
+        else if (ball.transform.localPosition.y < 0)
+        {
+            ball.transform.localPosition = lastKnownBallLocation;
+            _score += 2;
+            scoreLabel.text = "Strokes: " + _score.ToString();
+        }
+
+
         /*  
         if (Input.GetKey(KeyCode.Space) && IsBallNearby())
         {
