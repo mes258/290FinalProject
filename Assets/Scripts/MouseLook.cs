@@ -29,6 +29,9 @@ public class MouseLook : MonoBehaviour
     public float minimumVert = -45.0f;
     public float maximumVert = 45.0f;
 
+    [SerializeField]
+    public GameObject backwardsCamera;
+
     private float _rotationX = 0;
 
     void Start()
@@ -53,6 +56,9 @@ public class MouseLook : MonoBehaviour
         _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
 
         transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
+
+        //Why does this not work I will literally never understand
+        backwardsCamera.transform.localEulerAngles = new Vector3(-1 * _rotationX, rotationY + 180, 0);
 
     }
 }
