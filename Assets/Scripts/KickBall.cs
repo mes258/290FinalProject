@@ -14,6 +14,8 @@ public class KickBall : MonoBehaviour
     public float kickYComponent = 1000f;
     private float maxPower = 5;
     private int _score;
+    private Vector3 lastKnownPlayerLocation;
+    private Vector3 lastKnownBallLocation;
 
     private float timeSpacePressed = 0;
 
@@ -23,6 +25,8 @@ public class KickBall : MonoBehaviour
         powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
         _score = 0;
         scoreLabel.text = "Strokes: " + _score.ToString();
+        lastKnownPlayerLocation = transform.localPosition;
+        lastKnownBallLocation = ball.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -39,6 +43,8 @@ public class KickBall : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward())
         {
             powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
+            lastKnownPlayerLocation = transform.localPosition;
+            lastKnownBallLocation = ball.transform.localPosition;
             float diff = Mathf.Min(Time.time - timeSpacePressed, maxPower);
             Vector3 kickPosition = transform.position;
             kickPosition.y = kickPosition.y - 1.2f;
@@ -52,6 +58,12 @@ public class KickBall : MonoBehaviour
         {
             powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
 
+        }
+
+        if(transform.localPosition.y < 0 || ball.transform.localPosition.y < 0)
+        {
+            transform.localPosition = lastKnownPlayerLocation;
+            ball.transform.localPosition = lastKnownBallLocation;
         }
         /*  
         if (Input.GetKey(KeyCode.Space) && IsBallNearby())
