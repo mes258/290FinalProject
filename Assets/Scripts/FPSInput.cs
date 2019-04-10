@@ -89,8 +89,11 @@ public class FPSInput : MonoBehaviour
     {
         Vector3 top = transform.position + new Vector3(0, 1, 0);
         Vector3 down = new Vector3(0, -1, 0);
+
+        int ballLayer = 10;
+        int layermask = ~(1 << ballLayer);
         RaycastHit hit;
 
-        return Physics.SphereCast(top, 1.1f, down, out hit, 1f);
+        return Physics.SphereCast(top, 1.1f, down, out hit, 1f, layermask);
     }
 }
