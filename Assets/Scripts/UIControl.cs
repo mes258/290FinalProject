@@ -85,7 +85,7 @@ public class UIControl : MonoBehaviour
         }
     }
 
-    void showLevelEnd()
+    public void showLevelEnd()
     {
         LevelEndCanvas.enabled = true;
     }

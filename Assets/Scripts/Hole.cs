@@ -7,6 +7,12 @@ public class Hole : MonoBehaviour
     [SerializeField]
     public GameObject Ball;
 
+    [SerializeField]
+    private UIControl uiController;
+
+    [SerializeField]
+    private BallSFXPlayer ballSFX;
+
    //CapsuleCollider holeCollider;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,8 @@ public class Hole : MonoBehaviour
         if (other.gameObject == Ball)
         {
             Debug.Log("BALL");
+            uiController.showLevelEnd();
+
         }
         else
         {

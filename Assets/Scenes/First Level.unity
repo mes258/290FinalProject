@@ -529,6 +529,18 @@ Transform:
   m_Father: {fileID: 2084974985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171018084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8572534503405926265, guid: d62d72eec65ca408aad19faf45628886,
+    type: 3}
+  m_PrefabInstance: {fileID: 8572534504761972119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf82dbc39225844cd909d9dc1f5d50e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264360910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6434691510769622416, guid: ad4929ceaaa9d465eaad6f86406dfecd,
@@ -853,6 +865,16 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 1264360910}
+    - target: {fileID: 6828440775542983700, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: uiController
+      value: 
+      objectReference: {fileID: 1171018084}
+    - target: {fileID: 6828440775542983700, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ballSFX
+      value: 
+      objectReference: {fileID: 118671485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 969ac7cf4b8594d9f921846126d4f862, type: 3}
 --- !u!1001 &8572534504761972119
