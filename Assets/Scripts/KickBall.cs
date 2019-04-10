@@ -8,6 +8,8 @@ public class KickBall : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject powerMeter;
     [SerializeField] private Text scoreLabel;
+    [SerializeField] private BallSFXPlayer ballSFX;
+
     public float kickDistance = 3f;
     public float kickForce = 300f;
     public float canKickAngle = 45f;
@@ -60,6 +62,8 @@ public class KickBall : MonoBehaviour
             //Vector3 direction = generateKickDirection();
             Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
+
+            ballSFX.playHit();
             _score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             updateScore();
