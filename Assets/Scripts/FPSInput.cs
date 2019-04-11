@@ -46,6 +46,7 @@ public class FPSInput : MonoBehaviour
     {
         _charController = GetComponent<CharacterController>();
         //Player = GetComponentInChildren<Animator>();
+        rotateSpeed = 360f;
     }
 
     void Update()
@@ -63,7 +64,7 @@ public class FPSInput : MonoBehaviour
         {
             anim.SetInteger("playerState", 1);
             sfx.stopWalk();
-            Debug.Log("stopped");
+            //Debug.Log("stopped");
         }
         else
         {
@@ -99,11 +100,11 @@ public class FPSInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(new Vector3(0f, rotateSpeed, 0f));
+            transform.Rotate(new Vector3(0f, rotateSpeed * Time.deltaTime, 0f));
         }
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(new Vector3(0f, -1 * rotateSpeed, 0f));
+            transform.Rotate(new Vector3(0f, -1 * rotateSpeed * Time.deltaTime, 0f));
         }
     }
 

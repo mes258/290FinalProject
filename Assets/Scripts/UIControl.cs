@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject rearViewCamera;
+    //[SerializeField]
+    //private GameObject rearViewCamera;
 
-    [SerializeField]
-    private GameObject rearViewCameraBorder;
+    //[SerializeField]
+    //private GameObject rearViewCameraBorder;
 
     [SerializeField]
     private GameObject levelEndGameObj;
@@ -19,16 +19,13 @@ public class UIControl : MonoBehaviour
     private GameObject SettingsGameObj;
     private Canvas SettingsCanvas;
 
-    private Image border;
-    private RawImage camera;
 
-    private bool cameraEnabled = true;
     private bool settingsEnabled = false;
     // Start is called before the first frame update
     void Start()
     {
-        border = rearViewCameraBorder.GetComponent<Image>();
-        camera = rearViewCamera.GetComponent<RawImage>();
+        //border = rearViewCameraBorder.GetComponent<Image>();
+        //camera = rearViewCamera.GetComponent<RawImage>();
 
         SettingsCanvas = SettingsGameObj.GetComponent<Canvas>();
         SettingsCanvas.enabled = false;
@@ -40,31 +37,11 @@ public class UIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            toggleRearCamera();
 
-            //Debug.Log(enabled);
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             toggleSettings();
-        }
-    }
-
-    void toggleRearCamera()
-    {
-        cameraEnabled = !cameraEnabled;
-        if (cameraEnabled)
-        {
-            border.enabled = true;
-            camera.enabled = true;
-        }
-        else
-        {
-            border.enabled = false;
-            camera.enabled = false;
         }
     }
 
