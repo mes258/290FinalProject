@@ -9,6 +9,8 @@ using System.Collections;
 public class FPSInput : MonoBehaviour
 {
     public const float baseSpeed = 6.0f;
+    public bool walking = false;
+    public bool standing = false;
 
     public float speed = 6.0f;
     public float sideSpeed = 4.0f;
@@ -19,7 +21,9 @@ public class FPSInput : MonoBehaviour
     public float maxFall = -20f;
 
     private CharacterController _charController;
-    private Animator animator;
+    private Animator Player;
+
+    Animator anim;
 
     void Awake()
     {
@@ -35,7 +39,7 @@ public class FPSInput : MonoBehaviour
     void Start()
     {
         _charController = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>();
+        Player = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -45,8 +49,17 @@ public class FPSInput : MonoBehaviour
         float deltaZ = Input.GetAxis("Vertical") * speed;
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
+        anim = GetComponentInChildren<Animator>();
+        float EPSILON = 0.000000000000001f;
+        if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
+        {
+            anim.SetInteger("playerState", 1);
 
-
+        }
+        else
+        {
+            anim.SetInteger("playerState", 0);
+        }
         vertspeed = Mathf.Clamp(vertspeed - (gravity * Time.deltaTime), maxFall, 100f);
         //Debug.Log(vertspeed);
         if(isGrounded())

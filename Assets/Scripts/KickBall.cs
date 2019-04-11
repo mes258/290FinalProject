@@ -72,7 +72,7 @@ public class KickBall : MonoBehaviour
         {
             //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
             resetPower();
-            _score += 1;
+            //_score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             updateScore();
         }
