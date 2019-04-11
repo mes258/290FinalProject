@@ -21,9 +21,12 @@ public class FPSInput : MonoBehaviour
     public float maxFall = -20f;
 
     private CharacterController _charController;
-    private Animator Player;
 
-    Animator anim;
+
+    //private Animator Player;
+
+    [SerializeField]
+    private Animator anim;
 
     void Awake()
     {
@@ -39,7 +42,7 @@ public class FPSInput : MonoBehaviour
     void Start()
     {
         _charController = GetComponent<CharacterController>();
-        Player = GetComponentInChildren<Animator>();
+        //Player = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -49,7 +52,7 @@ public class FPSInput : MonoBehaviour
         float deltaZ = Input.GetAxis("Vertical") * speed;
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
         float EPSILON = 0.000000000000001f;
         if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
         {
