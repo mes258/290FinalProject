@@ -5,7 +5,13 @@ using UnityEngine;
 public class BallSFXPlayer : MonoBehaviour
 {
     [SerializeField]
-    AudioClip hitSound;
+    AudioClip smallHitSound;
+
+    [SerializeField]
+    AudioClip largeHitSound;
+
+    [SerializeField]
+    AudioClip groundHitSound;
 
     AudioSource source;
     // Start is called before the first frame update
@@ -20,9 +26,21 @@ public class BallSFXPlayer : MonoBehaviour
         
     }
 
-    public void playHit()
+    public void playSmallHit()
     {
-        source.clip = hitSound;
+        source.clip = smallHitSound;
+        source.Play();
+    }
+
+    public void playLargeHit()
+    {
+        source.clip = largeHitSound;
+        source.Play();
+    }
+
+    public void playGroundHit()
+    {
+        source.clip = groundHitSound;
         source.Play();
     }
 }

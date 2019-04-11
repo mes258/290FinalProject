@@ -44,7 +44,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dae67039da87742c7a2ea9ebc27d6cde, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -365,7 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27bd58cece48c46609a4b41fb7c4549e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSound: {fileID: 8300000, guid: 3b39eab628c164e8c990bc992e676ea9, type: 3}
+  smallHitSound: {fileID: 8300000, guid: 0c3080d2d4273425dbaa67c79aad4a72, type: 3}
+  largeHitSound: {fileID: 8300000, guid: 3c9797da9ee6440a4ab1dc704b1cf7c8, type: 3}
+  groundHitSound: {fileID: 8300000, guid: af49b04bcfc4e45ab978603b614c5c8d, type: 3}
 --- !u!1 &6434691510161866125
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +481,7 @@ GameObject:
   - component: {fileID: 6434691510769622421}
   - component: {fileID: 6434691510769622422}
   - component: {fileID: 6434691510769622423}
+  - component: {fileID: 2831734818491147447}
   m_Layer: 10
   m_Name: Head_ball
   m_TagString: Untagged
@@ -577,6 +580,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &2831734818491147447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434691510769622416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f84a6b9625a45edb29848517724dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 814843342603318146}
 --- !u!1 &6434691510897468467
 GameObject:
   m_ObjectHideFlags: 0

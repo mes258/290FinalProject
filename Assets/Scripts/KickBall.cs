@@ -56,14 +56,22 @@ public class KickBall : MonoBehaviour
 
             //make direction
             float diff = Mathf.Min(Time.time - timeSpacePressed, maxPower);
-            Vector3 kickPosition = transform.position;
-            kickPosition.y = kickPosition.y - 1.2f;
-            Vector3 direction = (ball.transform.position - kickPosition).normalized;
-            //Vector3 direction = generateKickDirection();
+            //Vector3 kickPosition = transform.position;
+            //kickPosition.y = kickPosition.y - 1.2f;
+            //Vector3 direction = (ball.transform.position - kickPosition).normalized;
+            Vector3 direction = generateKickDirection();
             Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
 
-            ballSFX.playHit();
+            if(diff >= maxPower / 3)
+            {
+                ballSFX.playLargeHit();
+            }
+            else
+            {
+                ballSFX.playSmallHit();
+            }
+
             _score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             updateScore();
@@ -89,6 +97,8 @@ public class KickBall : MonoBehaviour
         {
             transform.localPosition = lastKnownPlayerLocation;
             ball.transform.localPosition = lastKnownBallLocation;
+
+            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             _score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             updateScore();
