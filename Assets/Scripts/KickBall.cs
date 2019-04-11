@@ -98,8 +98,12 @@ public class KickBall : MonoBehaviour
             transform.localPosition = lastKnownPlayerLocation;
             ball.transform.localPosition = lastKnownBallLocation;
 
+            Rigidbody ballBody = ball.GetComponent<Rigidbody>(); 
+            ballBody.velocity = Vector3.zero;
+            ballBody.angularVelocity = Vector3.zero;
             ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            Debug.Log("set Velocity");
+
+            //Debug.Log("set Velocity");
             _score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             updateScore();
