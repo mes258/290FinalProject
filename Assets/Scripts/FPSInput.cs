@@ -28,6 +28,9 @@ public class FPSInput : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    [SerializeField]
+    private PlayerSFXPlayer sfx;
+
     void Awake()
     {
         //Keep Player speed constant
@@ -47,30 +50,39 @@ public class FPSInput : MonoBehaviour
 
     void Update()
     {
+        bool grounded = isGrounded();
+
         //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
         float deltaX = Input.GetAxis("Horizontal") * sideSpeed;
         float deltaZ = Input.GetAxis("Vertical") * speed;
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
         //anim = GetComponentInChildren<Animator>();
-        float EPSILON = 0.000000000000001f;
+        float EPSILON = 0.001f;
         if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
         {
             anim.SetInteger("playerState", 1);
-
+            sfx.stopWalk();
+            Debug.Log("stopped");
         }
         else
         {
+            if (grounded && vertspeed < 0.2f)
+            {
+                sfx.playWalk();
+            }
             anim.SetInteger("playerState", 0);
         }
         vertspeed = Mathf.Clamp(vertspeed - (gravity * Time.deltaTime), maxFall, 100f);
         //Debug.Log(vertspeed);
-        if(isGrounded())
+        if(grounded)
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
                //Debug.Log("Jdown");
                 vertspeed = 10;
+                sfx.stopWalk();
+                sfx.jump();
             }
 
             else if(vertspeed < 0)

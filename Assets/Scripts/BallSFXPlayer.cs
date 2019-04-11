@@ -13,6 +13,10 @@ public class BallSFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip groundHitSound;
 
+    [SerializeField]
+    AudioClip holeEnter;
+
+    bool blockingPlay = false;
     AudioSource source;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +44,24 @@ public class BallSFXPlayer : MonoBehaviour
 
     public void playGroundHit()
     {
-        source.clip = groundHitSound;
+        if (!blockingPlay)
+        {
+            source.clip = groundHitSound;
+            source.Play();
+        }
+    }
+
+    public void playHoleEnter()
+    {
+        blockingPlay = true;
+        source.clip = holeEnter;
         source.Play();
+        StartCoroutine(delay());
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1f);
+        blockingPlay = false;
     }
 }

@@ -32,7 +32,7 @@ public class Hole : MonoBehaviour
         {
             Debug.Log("BALL");
             uiController.showLevelEnd();
-
+            ballSFX.playHoleEnter();
         }
         else
         {
