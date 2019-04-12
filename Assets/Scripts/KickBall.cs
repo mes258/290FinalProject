@@ -24,6 +24,7 @@ public class KickBall : MonoBehaviour
     private float timeSpacePressed = 0;
 
     private HUDController hud;
+    [SerializeField] private Animator anim;
 
 
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class KickBall : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward() && !cancelled)
         {
+            anim.SetInteger("playerState", 3);
             hud.setPower(0);
             //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
             //resetPower();
@@ -83,7 +85,9 @@ public class KickBall : MonoBehaviour
             hud.addScore(1);
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
+            //anim.SetInteger("playerState", 0);
         }
+
         else if (Input.GetKeyUp(KeyCode.Space) && !cancelled)
         {
             //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);

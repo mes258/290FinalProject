@@ -62,8 +62,12 @@ public class FPSInput : MonoBehaviour
         float EPSILON = 0.001f;
         if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
         {
-            anim.SetInteger("playerState", 0);
-            sfx.stopWalk();
+            if (grounded && anim.GetInteger("playerState") != 3) 
+            {
+                anim.SetInteger("playerState", 0);
+                sfx.stopWalk();
+            }
+
             //Debug.Log("stopped");
         }
         else
@@ -71,8 +75,8 @@ public class FPSInput : MonoBehaviour
             if (grounded && vertspeed < 0.2f)
             {
                 sfx.playWalk();
+                anim.SetInteger("playerState", 1);
             }
-            anim.SetInteger("playerState", 1);
         }
         vertspeed = Mathf.Clamp(vertspeed - (gravity * Time.deltaTime), maxFall, 100f);
         //Debug.Log(vertspeed);
@@ -81,8 +85,8 @@ public class FPSInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 //Debug.Log("Jdown");
-                anim.SetInteger("playerState", 2);
                 vertspeed = 10;
+                anim.SetInteger("playerState", 2);
                 sfx.stopWalk();
                 sfx.jump();
             }
@@ -97,7 +101,6 @@ public class FPSInput : MonoBehaviour
         movement *= Time.deltaTime;
 
         movement = transform.TransformDirection(movement);
-
 
         _charController.Move(movement);
 
