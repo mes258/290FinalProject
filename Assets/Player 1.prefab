@@ -2739,7 +2739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSound: {fileID: 8300000, guid: ad99d6e60586f475495b64a736ba6ae7, type: 3}
   jumpStart: {fileID: 8300000, guid: ded4c42f1a5134e509f39caf770692c4, type: 3}
-  environmentHit: {fileID: 8300000, guid: c3ab977f038fd4af982d6729128af389, type: 3}
+  environmentHit: {fileID: 8300000, guid: a9097caeda1694fd086fce79aca6e287, type: 3}
 --- !u!114 &610309742501910518
 MonoBehaviour:
   m_ObjectHideFlags: 0
