@@ -9,6 +9,7 @@ public class KickBall : MonoBehaviour
     //[SerializeField] private GameObject powerMeter;
     //[SerializeField] private Text scoreLabel;
     [SerializeField] private BallSFXPlayer ballSFX;
+    [SerializeField] private PlayerSFXPlayer playerSFX;
 
     public float kickDistance = 3f;
     public float kickForce = 300f;
@@ -46,6 +47,8 @@ public class KickBall : MonoBehaviour
         {
             cancelled = false;
             timeSpacePressed = Time.time;
+            playerSFX.playPower();
+
         }
         if (Input.GetKey(KeyCode.Space) && !cancelled)
         {
@@ -54,6 +57,7 @@ public class KickBall : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward() && !cancelled)
         {
+            playerSFX.stopPower();
             anim.SetInteger("playerState", 3);
             hud.setPower(0);
             //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
@@ -97,6 +101,7 @@ public class KickBall : MonoBehaviour
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
             hud.addScore(1);
+            playerSFX.playMiss();
         }
 
         if(Input.GetKeyDown(KeyCode.F))
@@ -104,6 +109,7 @@ public class KickBall : MonoBehaviour
             cancelled = true;
             //resetPower();
             hud.setPower(0);
+            playerSFX.playCancel();
         }
 
 

@@ -7,7 +7,7 @@ public class PlayerSFXPlayer : MonoBehaviour
 {
     AudioSource walkSrc;
     AudioSource effectSrc;
-
+    AudioSource hitSrc;
 
 
     bool isWalking = false;
@@ -20,13 +20,28 @@ public class PlayerSFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip environmentHit;
 
+    [SerializeField]
+    AudioClip jumpEnd;
+
+    [SerializeField]
+    AudioClip power;
+
+    [SerializeField]
+    AudioClip miss;
+
+    [SerializeField]
+    AudioClip cancel;
+
 
     // Start is called before the first frame update
+
     void Start()
     {
         var sources = GetComponents<AudioSource>();
-        walkSrc = sources[0].loop ? sources[0] : sources[1];
-        effectSrc = sources[0].loop ? sources[1] : sources[0];
+        walkSrc = sources[0];
+        walkSrc.loop = true;
+        effectSrc = sources[1];
+        hitSrc = sources[2];
     }
 
     // Update is called once per frame
@@ -58,9 +73,41 @@ public class PlayerSFXPlayer : MonoBehaviour
         effectSrc.Play();
     }
 
+    public void land()
+    {
+        effectSrc.clip = jumpEnd;
+        effectSrc.Play();
+    }
+
     public void playDamage()
     {
         effectSrc.clip = environmentHit;
         effectSrc.Play();
+    }
+
+    public void playPower()
+    {
+        hitSrc.Stop();
+        hitSrc.clip = power;
+        hitSrc.Play();
+    }
+
+    public void stopPower()
+    {
+        hitSrc.Stop();
+    }
+
+    public void playMiss()
+    {
+        hitSrc.Stop();
+        hitSrc.clip = miss;
+        hitSrc.Play();
+    }
+
+    public void playCancel()
+    {
+        hitSrc.Stop();
+        hitSrc.clip = cancel;
+        hitSrc.Play();
     }
 }
