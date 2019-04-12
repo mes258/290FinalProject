@@ -22,6 +22,8 @@ public class FPSInput : MonoBehaviour
 
     private CharacterController _charController;
 
+    private bool airborn = false;
+
 
     //private Animator Player;
 
@@ -93,6 +95,10 @@ public class FPSInput : MonoBehaviour
 
             else if(vertspeed < 0)
             {
+                if(vertspeed < -3f)
+                {
+                    sfx.land();
+                }
                 vertspeed = 0;
             }
         }
