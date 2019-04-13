@@ -16,6 +16,9 @@ public class BallSFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip holeEnter;
 
+    [SerializeField]
+    AudioClip mulligan;
+
     bool blockingPlay = false;
     AudioSource source;
     // Start is called before the first frame update
@@ -57,6 +60,15 @@ public class BallSFXPlayer : MonoBehaviour
         source.clip = holeEnter;
         source.Play();
         StartCoroutine(delay());
+    }
+
+    public void playMulligan()
+    {
+        if(!blockingPlay)
+        {
+            source.clip = mulligan;
+            source.Play();
+        }
     }
 
     IEnumerator delay()

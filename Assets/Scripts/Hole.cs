@@ -11,6 +11,9 @@ public class Hole : MonoBehaviour
     private UIControl uiController;
 
     [SerializeField]
+    private HUDController hud;
+
+    [SerializeField]
     private BallSFXPlayer ballSFX;
 
    //CapsuleCollider holeCollider;
@@ -33,6 +36,7 @@ public class Hole : MonoBehaviour
             Debug.Log("BALL");
             uiController.showLevelEnd();
             ballSFX.playHoleEnter();
+            hud.endHole();
         }
         else
         {

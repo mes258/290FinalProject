@@ -17,8 +17,8 @@ public class KickBall : MonoBehaviour
     public float kickYComponent = 1000f;
     private float maxPower = 5;
 
-    private Vector3 lastKnownPlayerLocation;
-    private Vector3 lastKnownBallLocation;
+    //private Vector3 lastKnownPlayerLocation;
+    //private Vector3 lastKnownBallLocation;
 
     private bool cancelled = false;
 
@@ -26,6 +26,7 @@ public class KickBall : MonoBehaviour
 
     private HUDController hud;
     [SerializeField] private Animator anim;
+    private Mulligan mulligan;
 
 
     // Start is called before the first frame update
@@ -34,10 +35,11 @@ public class KickBall : MonoBehaviour
         //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
         //_score = 0;
         //scoreLabel.text = "Strokes: " + _score.ToString();
-        lastKnownPlayerLocation = transform.localPosition;
-        lastKnownBallLocation = ball.transform.localPosition;
+        //lastKnownPlayerLocation = transform.localPosition;
+        //lastKnownBallLocation = ball.transform.localPosition;
 
         hud = GetComponent<HUDController>();
+        mulligan = GetComponent<Mulligan>();
     }
 
     // Update is called once per frame
@@ -64,8 +66,8 @@ public class KickBall : MonoBehaviour
             //resetPower();
 
             //log positions
-            lastKnownPlayerLocation = transform.localPosition;
-            lastKnownBallLocation = ball.transform.localPosition;
+            mulligan.SetPlayerPos(transform.position);
+            mulligan.SetBallPos(ball.transform.position);
 
             //make direction
             float diff = Mathf.Min(Time.time - timeSpacePressed, maxPower);
@@ -110,37 +112,6 @@ public class KickBall : MonoBehaviour
             //resetPower();
             hud.setPower(0);
             playerSFX.playCancel();
-        }
-
-
-
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            transform.localPosition = lastKnownPlayerLocation;
-            ball.transform.localPosition = lastKnownBallLocation;
-
-            Rigidbody ballBody = ball.GetComponent<Rigidbody>(); 
-            ballBody.velocity = Vector3.zero;
-            ballBody.angularVelocity = Vector3.zero;
-            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-
-            //Debug.Log("set Velocity");
-            //_score += 1;
-            hud.addScore(1);
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
-        }
-        else if (transform.localPosition.y < 0)
-        {
-            transform.localPosition = lastKnownPlayerLocation;
-        }
-        else if (ball.transform.localPosition.y < 0)
-        {
-            ball.transform.localPosition = lastKnownBallLocation;
-            //_score += 2;
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
-            hud.addScore(2);
         }
 
         /*  
