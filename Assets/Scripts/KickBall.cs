@@ -10,6 +10,7 @@ public class KickBall : MonoBehaviour
     //[SerializeField] private Text scoreLabel;
     [SerializeField] private BallSFXPlayer ballSFX;
     [SerializeField] private PlayerSFXPlayer playerSFX;
+    [SerializeField] private MouseLook camera;
 
     public float kickDistance = 3f;
     public float kickForce = 300f;
@@ -77,6 +78,8 @@ public class KickBall : MonoBehaviour
             Vector3 direction = generateKickDirection();
             Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
+
+            camera.shake(diff / maxPower);
 
             if(diff >= maxPower / 3)
             {
