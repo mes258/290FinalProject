@@ -22,6 +22,8 @@ public class FPSInput : MonoBehaviour
 
     private CharacterController _charController;
 
+    private bool airborn = false;
+
 
     //private Animator Player;
 
@@ -30,6 +32,8 @@ public class FPSInput : MonoBehaviour
 
     [SerializeField]
     private PlayerSFXPlayer sfx;
+
+    private Mulligan mulligan;
 
     void Awake()
     {
@@ -47,6 +51,7 @@ public class FPSInput : MonoBehaviour
         _charController = GetComponent<CharacterController>();
         //Player = GetComponentInChildren<Animator>();
         rotateSpeed = 360f;
+        mulligan = GetComponent<Mulligan>();
     }
 
     void Update()
@@ -93,6 +98,10 @@ public class FPSInput : MonoBehaviour
 
             else if(vertspeed < 0)
             {
+                if(vertspeed < -3f)
+                {
+                    sfx.land();
+                }
                 vertspeed = 0;
             }
         }
@@ -102,7 +111,11 @@ public class FPSInput : MonoBehaviour
 
         movement = transform.TransformDirection(movement);
 
-        _charController.Move(movement);
+        if(!mulligan.checkPosResets())
+        {
+            _charController.Move(movement);
+        }
+
 
         if (Input.GetKey(KeyCode.E))
         {

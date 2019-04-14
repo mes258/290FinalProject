@@ -34,6 +34,11 @@ public class MouseLook : MonoBehaviour
 
     private float _rotationX = 0;
 
+    bool isShaking = false;
+    float shakePower = 0f;
+    float maxShake = 0.5f;
+    Vector3 originalPos;
+
     void Start()
     {
         // Make the rigid body not change rotation
@@ -56,9 +61,29 @@ public class MouseLook : MonoBehaviour
         _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
 
         transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
-
-        //Why does this not work I will literally never understand
         backwardsCamera.transform.localEulerAngles = new Vector3(-1 * _rotationX, rotationY + 180, 0);
 
+        if(isShaking)
+        {
+            transform.localPosition = originalPos + Random.insideUnitSphere * shakePower;
+        }
+        else
+        {
+            transform.localPosition = originalPos;
+        }
+    }
+
+    public void shake(float power)
+    {
+        isShaking = true;
+        shakePower = power * maxShake;
+        originalPos = transform.localPosition;
+        StartCoroutine(delayStop());
+    }
+
+    IEnumerator delayStop()
+    {
+        yield return new WaitForSeconds(0.25f);
+        isShaking = false;
     }
 }
