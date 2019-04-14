@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6828440775542983723}
   - component: {fileID: 6828440775542983722}
   - component: {fileID: 6828440775542983700}
+  - component: {fileID: 7569334984153331097}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -63,6 +64,19 @@ MonoBehaviour:
   uiController: {fileID: 0}
   hud: {fileID: 0}
   ballSFX: {fileID: 0}
+--- !u!65 &7569334984153331097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6828440775542983721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6828440773931120967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +84,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6828440775542983723}
     m_Modifications:
+    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrinking glow
+      objectReference: {fileID: 0}
     - target: {fileID: 3302654702468753691, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -124,11 +143,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: m_Name
-      value: Shrinking glow
       objectReference: {fileID: 0}
     - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
