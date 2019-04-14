@@ -43,9 +43,10 @@ public class KickBall : MonoBehaviour
         mulligan = GetComponent<Mulligan>();
     }
 
+
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             cancelled = false;
@@ -95,6 +96,8 @@ public class KickBall : MonoBehaviour
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
             //anim.SetInteger("playerState", 0);
+            StartCoroutine(delay());
+
         }
 
         else if (Input.GetKeyUp(KeyCode.Space) && !cancelled)
@@ -125,6 +128,12 @@ public class KickBall : MonoBehaviour
             Vector3 direction = (ball.transform.position - kickPosition).normalized;
             ball.GetComponent<Rigidbody>().AddForce( direction * kickForce );
         }*/
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1f);
+        anim.SetInteger("playerState", 0);
     }
 
     //void resetPower()
