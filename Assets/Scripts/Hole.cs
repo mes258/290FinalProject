@@ -29,7 +29,7 @@ public class Hole : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == Ball)
         {
