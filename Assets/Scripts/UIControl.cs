@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIControl : MonoBehaviour
 {
@@ -65,5 +66,9 @@ public class UIControl : MonoBehaviour
     public void showLevelEnd()
     {
         LevelEndCanvas.enabled = true;
+    }
+    public void goToNextLevel(string level)
+    {
+        SceneManager.LoadScene(level);
     }
 }

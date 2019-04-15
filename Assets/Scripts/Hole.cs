@@ -16,7 +16,7 @@ public class Hole : MonoBehaviour
     [SerializeField]
     private BallSFXPlayer ballSFX;
 
-   //CapsuleCollider holeCollider;
+    //CapsuleCollider holeCollider;
     // Start is called before the first frame update
     void Start()
     { 
