@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9183706000262369657, guid: e29dca40f812f458e9628ee826f39f7e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29dca40f812f458e9628ee826f39f7e, type: 3}
 --- !u!1 &1015034852
@@ -376,7 +381,7 @@ GameObject:
   - component: {fileID: 1015034854}
   - component: {fileID: 1015034853}
   m_Layer: 11
-  m_Name: Capsule
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,6 +617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6275c7657bb734fb7ba8e5ee33107824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1476843277 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6135558116000611522, guid: 609ca5c2383734c57aed35e652c67366,
+    type: 3}
+  m_PrefabInstance: {fileID: 2786158749989999721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2016341936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,6 +1127,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1407592860}
+    - target: {fileID: 4987131330677558163, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1476843277}
     - target: {fileID: 7165763481467847811, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: sfx
@@ -1166,5 +1182,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4987131330677558162, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1476843277}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609ca5c2383734c57aed35e652c67366, type: 3}

@@ -19,12 +19,18 @@ public class BallSFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip mulligan;
 
+    [SerializeField]
+    AudioClip fall;
+
     bool blockingPlay = false;
     AudioSource source;
+    AudioSource environment;
     // Start is called before the first frame update
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        AudioSource[] sources = GetComponents<AudioSource>();
+        source = sources[0];
+        environment = sources[1];
     }
 
     // Update is called once per frame
@@ -47,33 +53,39 @@ public class BallSFXPlayer : MonoBehaviour
 
     public void playGroundHit()
     {
-        if (!blockingPlay)
-        {
+        //if (!blockingPlay)
+        //{
             source.clip = groundHitSound;
             source.Play();
-        }
+        //}
     }
 
     public void playHoleEnter()
     {
-        blockingPlay = true;
-        source.clip = holeEnter;
-        source.Play();
-        StartCoroutine(delay());
+        //blockingPlay = true;
+        environment.clip = holeEnter;
+        environment.Play();
+        //StartCoroutine(delay());
     }
 
     public void playMulligan()
     {
-        if(!blockingPlay)
-        {
+        //if(!blockingPlay)
+        //{
             source.clip = mulligan;
             source.Play();
-        }
+        //}
     }
 
-    IEnumerator delay()
+    //IEnumerator delay()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //   blockingPlay = false;
+    //}
+
+    public void playFall()
     {
-        yield return new WaitForSeconds(1f);
-        blockingPlay = false;
+        environment.clip = fall;
+        environment.Play();
     }
 }

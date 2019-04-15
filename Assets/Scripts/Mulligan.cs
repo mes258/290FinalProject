@@ -10,6 +10,9 @@ public class Mulligan : MonoBehaviour
     [SerializeField]
     BallSFXPlayer sfx;
 
+    [SerializeField]
+    PlayerSFXPlayer playerSFX;
+
     HUDController hud;
 
     Vector3 lastKnownBallLocation;
@@ -78,15 +81,18 @@ public class Mulligan : MonoBehaviour
         if (transform.position.y < 0)
         {
             transform.position = lastKnownPlayerLocation;
+            playerSFX.playFall();
+            hud.addScore(2);
             return true;
         }
-        else if (ball.transform.position.y < 0)
+        if (ball.transform.position.y < 0)
         {
             ball.transform.position = lastKnownBallLocation;
             //_score += 2;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
             hud.addScore(2);
+            sfx.playFall();
             return true;
         }
 
