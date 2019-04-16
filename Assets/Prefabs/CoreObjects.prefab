@@ -805,6 +805,11 @@ PrefabInstance:
       propertyPath: fall
       value: 
       objectReference: {fileID: 8300000, guid: 64e2d1e8daebe4f5a8c4329421b99ef3, type: 3}
+    - target: {fileID: 5389186560565011448, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 9216318983638720900}
     - target: {fileID: 8327029294186491097, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
         type: 3}
       propertyPath: m_Enabled

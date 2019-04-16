@@ -9,6 +9,9 @@ public class PlayerCollisionListener : MonoBehaviour
     private HUDController hud;
     private PlayerSFXPlayer sfx;
 
+    [SerializeField]
+    private MouseLook camera;
+
     private bool canhit = true;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class PlayerCollisionListener : MonoBehaviour
             hud.addScore(1);
             sfx.playDamage();
             canhit = false;
+            camera.shake(0.5f);
             StartCoroutine(delay());
         }
     }
