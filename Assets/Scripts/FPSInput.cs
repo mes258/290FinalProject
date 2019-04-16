@@ -69,8 +69,6 @@ public class FPSInput : MonoBehaviour
         {
             if (grounded && anim.GetInteger("playerState") != 3) 
             {
-                //Need to set the model to height of -1
-                //GameObject.Find("Player").GetComponent<GameObject>();
                 anim.SetInteger("playerState", 0);
                 sfx.stopWalk();
             }
