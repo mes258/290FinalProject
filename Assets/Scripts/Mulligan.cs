@@ -91,6 +91,11 @@ public class Mulligan : MonoBehaviour
             //_score += 2;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
+
+            Rigidbody ballBody = ball.GetComponent<Rigidbody>();
+            ballBody.velocity = Vector3.zero;
+            ballBody.angularVelocity = Vector3.zero;
+
             hud.addScore(2);
             sfx.playFall();
             return true;

@@ -46,7 +46,7 @@ public class UIControl : MonoBehaviour
         }
     }
 
-    void toggleSettings()
+    public void toggleSettings()
     {
         settingsEnabled = !settingsEnabled;
         if(settingsEnabled)
@@ -67,8 +67,19 @@ public class UIControl : MonoBehaviour
     {
         LevelEndCanvas.enabled = true;
     }
+
     public void goToNextLevel(string level)
     {
         SceneManager.LoadScene(level);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -43,7 +43,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6828440775542983721}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 2
   m_Height: 5
   m_Direction: 1
@@ -84,11 +84,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6828440775542983723}
     m_Modifications:
-    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: m_Name
-      value: Shrinking glow
-      objectReference: {fileID: 0}
     - target: {fileID: 3302654702468753691, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -143,6 +138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrinking glow
       objectReference: {fileID: 0}
     - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
