@@ -18,6 +18,7 @@ public class Mulligan : MonoBehaviour
     Vector3 lastKnownBallLocation;
     Vector3 lastKnownPlayerLocation;
 
+    bool shouldFall = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +36,12 @@ public class Mulligan : MonoBehaviour
 
     public bool checkPosResets()
     {
-        if (Input.GetKeyUp(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             sfx.playMulligan();
+            hud.addScore(1);
             StartCoroutine(mulliganDelay());
+            shouldFall = false;
             return true;
 
             //Debug.Log("set Velocity");
@@ -60,10 +63,11 @@ public class Mulligan : MonoBehaviour
         transform.position = lastKnownPlayerLocation;
         ball.transform.position = lastKnownBallLocation;
 
+        shouldFall = true;
         Rigidbody ballBody = ball.GetComponent<Rigidbody>();
         ballBody.velocity = Vector3.zero;
         ballBody.angularVelocity = Vector3.zero;
-        hud.addScore(1);
+
     }
 
     public void SetPlayerPos(Vector3 pos)
@@ -85,7 +89,7 @@ public class Mulligan : MonoBehaviour
             hud.addScore(2);
             return true;
         }
-        if (ball.transform.position.y < 0)
+        if (shouldFall && ball.transform.position.y < 0)
         {
             ball.transform.position = lastKnownBallLocation;
             //_score += 2;
