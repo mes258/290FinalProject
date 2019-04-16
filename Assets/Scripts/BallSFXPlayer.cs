@@ -72,8 +72,8 @@ public class BallSFXPlayer : MonoBehaviour
     {
         //if(!blockingPlay)
         //{
-            source.clip = mulligan;
-            source.Play();
+            environment.clip = mulligan;
+            environment.Play();
         //}
     }
 
