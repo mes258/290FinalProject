@@ -983,6 +983,7 @@ MonoBehaviour:
   power: {fileID: 8300000, guid: abec615119a3f4039a1ac6629b500b89, type: 3}
   miss: {fileID: 8300000, guid: 4ecc510429ebc49208f87e9017604500, type: 3}
   cancel: {fileID: 8300000, guid: 0e360ae96afbb4ba4854ebfefe5ad900, type: 3}
+  fall: {fileID: 0}
 --- !u!114 &610309742501910518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,6 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
   sfx: {fileID: 0}
+  playerSFX: {fileID: 0}
 --- !u!1 &7178655457586236631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1075,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7178655457586236631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1198,11 +1200,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7178655457240343879}
     m_Modifications:
-    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: m_Name
-      value: Shrinking glow
-      objectReference: {fileID: 0}
     - target: {fileID: 3302654702468753691, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1257,6 +1254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrinking glow
       objectReference: {fileID: 0}
     - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
@@ -1323,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 793ed6ad5e4b14b49a807b23844de289, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 793ed6ad5e4b14b49a807b23844de289, type: 3}
       propertyPath: m_LocalPosition.z

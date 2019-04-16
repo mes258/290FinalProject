@@ -32,6 +32,9 @@ public class PlayerSFXPlayer : MonoBehaviour
     [SerializeField]
     AudioClip cancel;
 
+    [SerializeField]
+    AudioClip fall;
+
 
     // Start is called before the first frame update
 
@@ -83,6 +86,12 @@ public class PlayerSFXPlayer : MonoBehaviour
     {
         effectSrc.clip = environmentHit;
         effectSrc.Play();
+    }
+
+    public void playFall()
+    {
+        hitSrc.clip = fall;
+        hitSrc.Play();
     }
 
     public void playPower()

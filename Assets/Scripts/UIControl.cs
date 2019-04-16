@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIControl : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class UIControl : MonoBehaviour
         }
     }
 
-    void toggleSettings()
+    public void toggleSettings()
     {
         settingsEnabled = !settingsEnabled;
         if(settingsEnabled)
@@ -65,5 +66,20 @@ public class UIControl : MonoBehaviour
     public void showLevelEnd()
     {
         LevelEndCanvas.enabled = true;
+    }
+
+    public void goToNextLevel(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
