@@ -65,6 +65,8 @@ public class UIControl : MonoBehaviour
 
     public void showLevelEnd()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         LevelEndCanvas.enabled = true;
     }
 
