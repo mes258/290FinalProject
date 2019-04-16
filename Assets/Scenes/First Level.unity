@@ -1273,5 +1273,20 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1476843277}
+    - target: {fileID: 6135558115991113474, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135558115991113476, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135558115991113478, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609ca5c2383734c57aed35e652c67366, type: 3}
