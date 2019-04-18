@@ -198,6 +198,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_Name
+      value: UISceneController
+      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926264, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -252,11 +257,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_Name
-      value: UISceneController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d62d72eec65ca408aad19faf45628886, type: 3}
