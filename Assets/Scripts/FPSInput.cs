@@ -14,7 +14,7 @@ public class FPSInput : MonoBehaviour
 
     public float speed = 6.0f;
     public float sideSpeed = 4.0f;
-    public float rotateSpeed = 4.0f;
+    public float rotateSpeed = 2.0f;
 
     private float vertspeed = 0;
     public float gravity = -9.8f;
