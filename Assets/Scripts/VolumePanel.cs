@@ -18,24 +18,50 @@ public class VolumePanel : MonoBehaviour
     [SerializeField]
     private AudioMixer mixer;
 
+    private Dictionary<string, Slider> sliderNames;
     // Start is called before the first frame update
     void Start()
     {
         disableVolume();
 
-        SFXVol.onValueChanged.AddListener(delegate { VolChange("SFXVol"); });
-        MusicVol.onValueChanged.AddListener(delegate { VolChange("MusicVol"); });
+        if(!PlayerPrefs.HasKey("MusicVol"))
+        {
+            PlayerPrefs.SetFloat("MusicVol", 1.5f);
+        }
+        else
+        {
+            Debug.Log("Found Key");
+            Debug.Log(PlayerPrefs.GetFloat("MusicVol"));
+        }
+        if (!PlayerPrefs.HasKey("SFXVol"))
+        {
+            PlayerPrefs.SetFloat("SFXVol", 1.5f);
+        }
+        else
+        {
+            Debug.Log("Found Key");
+            Debug.Log(PlayerPrefs.GetFloat("SFXVol"));
+        }
+
+        sliderNames = new Dictionary<string, Slider>() {
+            ["SFXVol"] = SFXVol
+            ,["MusicVol"] = MusicVol 
+        };
 
         SFXVol.minValue = 0.001f;
         SFXVol.maxValue = 2;
-        float temp = 0;
-        mixer.GetFloat("SFXVol", out temp);
-        SFXVol.value = DBToSlider(temp);
+        float initial = PlayerPrefs.GetFloat("SFXVol");
+        SFXVol.value = initial;
+        VolChange("SFXVol");
 
         MusicVol.minValue = 0.001f;
         MusicVol.maxValue = 2;
-        mixer.GetFloat("MusicVol", out temp);
-        MusicVol.value = DBToSlider(temp);
+        initial = PlayerPrefs.GetFloat("MusicVol");
+        MusicVol.value = initial;
+        VolChange("MusicVol");
+
+        SFXVol.onValueChanged.AddListener(delegate { VolChange("SFXVol"); });
+        MusicVol.onValueChanged.AddListener(delegate { VolChange("MusicVol"); });
     }
 
     // Update is called once per frame
@@ -56,7 +82,9 @@ public class VolumePanel : MonoBehaviour
 
     public void VolChange(string mixerName)
     {
-        float vol = MusicVol.value;
+        float vol = sliderNames[mixerName].value;
+        PlayerPrefs.SetFloat(mixerName, vol);
+        Debug.Log("Settings " + mixerName + " to " + vol);
         vol = sliderToDB(vol);
         if (vol < -75f)
         {
