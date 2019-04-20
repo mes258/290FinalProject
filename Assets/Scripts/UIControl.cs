@@ -25,20 +25,10 @@ public class UIControl : MonoBehaviour
     private GameObject keyBindings;
 
     [SerializeField]
-    private GameObject volumeControls;
-
-    [SerializeField]
-    private Slider MusicVol;
-
-    [SerializeField]
-    private Slider SFXVol;
-
-    [SerializeField]
-    private AudioMixer mixer;
+    private VolumePanel volumePanel;
 
     private bool settingsEnabled = false;
     private bool showKeyBindings = false;
-    private bool showVolume = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,34 +41,11 @@ public class UIControl : MonoBehaviour
         LevelEndCanvas = levelEndGameObj.GetComponent<Canvas>();
         LevelEndCanvas.enabled = false;
 
-        disableVolume();
+        volumePanel.disableVolume();
         disableKeybindings();
 
-        SFXVol.onValueChanged.AddListener(delegate { VolChange("SFXVol"); });
-        MusicVol.onValueChanged.AddListener(delegate { VolChange("MusicVol"); });
 
-        SFXVol.minValue = 0.001f;
-        SFXVol.maxValue = 2;
-        float temp = 0;
-        mixer.GetFloat("SFXVol", out temp);
-        SFXVol.value = DBToSlider(temp); 
-
-        MusicVol.minValue = 0.001f;
-        MusicVol.maxValue = 2;
-        mixer.GetFloat("MusicVol", out temp);
-        MusicVol.value = DBToSlider(temp);
     }
-
-    float sliderToDB(float slider)
-    {
-        return 12.5182f * Mathf.Log(1.60619f * slider);
-    }
-
-    float DBToSlider(float DB)
-    {
-        return Mathf.Exp(DB / 12.5182f) / 1.60619f;
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -106,22 +73,22 @@ public class UIControl : MonoBehaviour
             Cursor.visible = false;
             SettingsCanvas.enabled = false;
 
-            disableVolume();
+            volumePanel.disableVolume();
             disableKeybindings();
         }
     }
 
+    public void showVolume()
+    {
+        volumePanel.open();
+    }
     void disableKeybindings()
     {
         keyBindings.SetActive(false);
         showKeyBindings = false;
     }
 
-    void disableVolume()
-    {
-        volumeControls.SetActive(false);
-        showVolume = false;
-    }
+
 
     public void toggleKeybindings()
     {
@@ -129,7 +96,7 @@ public class UIControl : MonoBehaviour
         if (showKeyBindings)
         {
             keyBindings.SetActive(true);
-            disableVolume();
+            volumePanel.disableVolume();
         }
         else
         {
@@ -137,19 +104,7 @@ public class UIControl : MonoBehaviour
         }
     }
 
-    public void toggleVolumeControls()
-    {
-        showVolume = !showVolume;
-        if(showVolume)
-        {
-            volumeControls.SetActive(true);
-            disableKeybindings();
-        }
-        else
-        {
-            volumeControls.SetActive(false);
-        }
-    }
+   
 
     public void showLevelEnd()
     {
@@ -178,15 +133,6 @@ public class UIControl : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void VolChange(string mixerName)
-    {
-        float vol = MusicVol.value;
-        vol = sliderToDB(vol);
-        if (vol < -75f)
-        {
-            vol = -80f;
-        }
-        mixer.SetFloat(mixerName, vol);
-    }
+
 
 }
