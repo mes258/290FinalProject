@@ -82,6 +82,7 @@ public class UIControl : MonoBehaviour
     {
         volumePanel.open();
     }
+
     void disableKeybindings()
     {
         keyBindings.SetActive(false);
@@ -110,6 +111,7 @@ public class UIControl : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Debug.Log("Level over");
         LevelEndCanvas.enabled = true;
     }
 

@@ -678,6 +678,31 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Score: 0'
       objectReference: {fileID: 0}
+    - target: {fileID: 2786158750986369613, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640649335562585856, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830348599609890233, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605213986996563152, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503695836791039539, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609ca5c2383734c57aed35e652c67366, type: 3}
 --- !u!1001 &1615027126

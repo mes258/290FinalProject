@@ -204,7 +204,7 @@ RectTransform:
   - {fileID: 3910564287400931212}
   - {fileID: 1231998484984869178}
   m_Father: {fileID: 8572534504131967689}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -280,7 +280,7 @@ RectTransform:
   m_Children:
   - {fileID: 2195809184198538304}
   m_Father: {fileID: 8572534504131967689}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1367,7 +1367,7 @@ RectTransform:
   - {fileID: 8572534502727470803}
   - {fileID: 8572534503644616232}
   m_Father: {fileID: 8572534504131967689}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1607,7 +1607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8572534503610694591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2013,7 +2013,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8572534503992664130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8572534503405926265}
+        m_MethodName: ToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &8572534503997564166
@@ -2362,10 +2373,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 8578699788990363553}
   - {fileID: 2573171038440361848}
   - {fileID: 8572534503197808703}
   - {fileID: 6722175865739481412}
+  - {fileID: 8578699788990363553}
   m_Father: {fileID: 8572534503405926264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2640,7 +2651,7 @@ PrefabInstance:
     - target: {fileID: 6923748522068654246, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6923748522068654246, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
