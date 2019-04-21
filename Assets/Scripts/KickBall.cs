@@ -7,7 +7,7 @@ public class KickBall : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
     //[SerializeField] private GameObject powerMeter;
-    [SerializeField] private Text scoreLabel;
+    //[SerializeField] private Text scoreLabel;
     [SerializeField] private BallSFXPlayer ballSFX;
     [SerializeField] private PlayerSFXPlayer playerSFX;
     [SerializeField] private MouseLook camera;

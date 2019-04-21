@@ -19,6 +19,7 @@ public class FPSInput : MonoBehaviour
     private float vertspeed = 0;
     public float gravity = -9.8f;
     public float maxFall = -20f;
+    public float jumpHeight = 10f;
 
     private CharacterController _charController;
 
@@ -50,7 +51,7 @@ public class FPSInput : MonoBehaviour
     {
         _charController = GetComponent<CharacterController>();
         //Player = GetComponentInChildren<Animator>();
-        rotateSpeed = 360f;
+        //rotateSpeed = 270f;
         mulligan = GetComponent<Mulligan>();
     }
 
@@ -90,7 +91,7 @@ public class FPSInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.J))
             {
                 //Debug.Log("Jdown");
-                vertspeed = 10;
+                vertspeed = jumpHeight;
                 anim.SetInteger("playerState", 2);
                 sfx.stopWalk();
                 sfx.jump();
@@ -102,7 +103,7 @@ public class FPSInput : MonoBehaviour
                 {
                     sfx.land();
                 }
-                vertspeed = 0;
+                vertspeed = -5f;
             }
         }
         movement.y = vertspeed;
@@ -126,7 +127,6 @@ public class FPSInput : MonoBehaviour
             transform.Rotate(new Vector3(0f, -1 * rotateSpeed * Time.deltaTime, 0f));
         }
     }
-
 
     private void OnSpeedChanged(float value)
     {
