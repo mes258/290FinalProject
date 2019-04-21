@@ -573,7 +573,7 @@ RectTransform:
   - {fileID: 746070541829246664}
   - {fileID: 6849870878894104112}
   m_Father: {fileID: 7178655457240343879}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -680,6 +680,7 @@ Transform:
   - {fileID: 7178655457586236630}
   - {fileID: 7178655456947505661}
   - {fileID: 5641558903358807270}
+  - {fileID: 6735600248492295561}
   - {fileID: 7178655457118627674}
   - {fileID: 8327029294192066035}
   m_Father: {fileID: 0}
@@ -1084,6 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59768391fc05c4c42a4f9c943fa612a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
 --- !u!114 &5033770341829225048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,6 +1274,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7178655457240343879}
     m_Modifications:
+    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrinking glow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.04843266
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.09411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.11043616
+      objectReference: {fileID: 0}
     - target: {fileID: 3302654702468753691, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1327,41 +1364,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744255, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: m_Name
-      value: Shrinking glow
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0.04843266
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0.9529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.09411765
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302654703753744253, guid: fb31a6396efc043c4afde3fed19f5caf,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0.11043616
-      objectReference: {fileID: 0}
     - target: {fileID: 3302654703753744252, guid: fb31a6396efc043c4afde3fed19f5caf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1379,6 +1381,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3302654702468753691, guid: fb31a6396efc043c4afde3fed19f5caf,
     type: 3}
   m_PrefabInstance: {fileID: 7178655456645658109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7700863547204411502
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7178655457240343879}
+    m_Modifications:
+    - target: {fileID: 4819952146221982134, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_Name
+      value: GlowBoi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 503739216046614949, guid: b7c1163b8da5c422893d85627788942b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 575a4445caa6a4c418758230a1c36e33, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7c1163b8da5c422893d85627788942b, type: 3}
+--- !u!4 &6735600248492295561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4010277506785813991, guid: b7c1163b8da5c422893d85627788942b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7700863547204411502}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8327029294191667065
 PrefabInstance:
@@ -1421,7 +1518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 793ed6ad5e4b14b49a807b23844de289, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 793ed6ad5e4b14b49a807b23844de289, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
