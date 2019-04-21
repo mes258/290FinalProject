@@ -22,6 +22,9 @@ public class UIControl : MonoBehaviour
     private Canvas SettingsCanvas;
 
     [SerializeField]
+    private GameObject menuObj;
+
+    [SerializeField]
     private GameObject keyBindings;
 
     [SerializeField]
@@ -98,10 +101,12 @@ public class UIControl : MonoBehaviour
         {
             keyBindings.SetActive(true);
             volumePanel.disableVolume();
+            menuObj.SetActive(false);
         }
         else
         {
             keyBindings.SetActive(false);
+            menuObj.SetActive(true);
         }
     }
 
