@@ -555,6 +555,11 @@ PrefabInstance:
       propertyPath: kickYComponent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7178655457240343880, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: scoreLabel
+      value: 
+      objectReference: {fileID: 4987131329784607443}
     - target: {fileID: 7178655457240343878, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
         type: 3}
       propertyPath: m_Height
@@ -825,6 +830,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraImg
       objectReference: {fileID: 0}
+    - target: {fileID: 7178655456891722760, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178655456891722760, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178655456891722760, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178655456891722760, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d909cde1fb5c415599f7e1feb8ec73a, type: 3}
 --- !u!1 &4987131330677558175 stripped
@@ -863,6 +888,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d64a3d086c048e8ab37ea090fb53d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4987131329784607443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7178655456891722760, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2786158750056787675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4214478270308254203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2078051925288857376, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
@@ -888,11 +925,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
-    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_Name
-      value: UISceneController
-      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926264, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -958,6 +990,11 @@ PrefabInstance:
       propertyPath: rearViewCameraBorder
       value: 
       objectReference: {fileID: 4214478270308254203}
+    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_Name
+      value: UISceneController
+      objectReference: {fileID: 0}
     - target: {fileID: 8572534503610694579, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_IsActive
@@ -1075,41 +1112,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
-    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0.60881424
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0.9725491
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0.16078432
-      objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983723, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1164,6 +1166,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.60881424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.9725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292846829263320634, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.16078432
       objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983700, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}

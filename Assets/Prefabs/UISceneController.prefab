@@ -189,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2573171038440361848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2608,11 +2608,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8572534504131967689}
     m_Modifications:
-    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_Name
-      value: VolumeController
-      objectReference: {fileID: 0}
     - target: {fileID: 6923748522068654246, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2668,17 +2663,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_Name
+      value: VolumeController
+      objectReference: {fileID: 0}
     - target: {fileID: 2363256794009322700, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7342638470575370012, guid: 6cd5aed976fa8452aa99133fbe535900,
+    - target: {fileID: 119553697720499621, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 119553697720499621, guid: 6cd5aed976fa8452aa99133fbe535900,
+    - target: {fileID: 7342638470575370012, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
