@@ -16,6 +16,7 @@ public class KickBall : MonoBehaviour
     public float kickForce = 300f;
     public float canKickAngle = 45f;
     public float kickYComponent = 1000f;
+
     private float maxPower = 5;
 
     //private Vector3 lastKnownPlayerLocation;

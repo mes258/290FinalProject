@@ -277,6 +277,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5744933739659129861, guid: ad4929ceaaa9d465eaad6f86406dfecd,
+        type: 3}
+      propertyPath: kickball
+      value: 
+      objectReference: {fileID: 4987131330677558163}
     m_RemovedComponents:
     - {fileID: 180078929281015077, guid: ad4929ceaaa9d465eaad6f86406dfecd, type: 3}
     - {fileID: 9007068313659982601, guid: ad4929ceaaa9d465eaad6f86406dfecd, type: 3}
@@ -884,6 +889,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2786158750056787675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4987131330677558163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7178655457240343880, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2786158750056787675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987131330677558175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6baf50cfa93e49e1ae0c229aec10936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7478901682281888425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4710776117743621234, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
