@@ -28,19 +28,9 @@ public class VolumePanel : MonoBehaviour
         {
             PlayerPrefs.SetFloat("MusicVol", 1.5f);
         }
-        else
-        {
-            Debug.Log("Found Key");
-            Debug.Log(PlayerPrefs.GetFloat("MusicVol"));
-        }
         if (!PlayerPrefs.HasKey("SFXVol"))
         {
             PlayerPrefs.SetFloat("SFXVol", 1.5f);
-        }
-        else
-        {
-            Debug.Log("Found Key");
-            Debug.Log(PlayerPrefs.GetFloat("SFXVol"));
         }
 
         sliderNames = new Dictionary<string, Slider>() {
@@ -48,13 +38,13 @@ public class VolumePanel : MonoBehaviour
             ,["MusicVol"] = MusicVol 
         };
 
-        SFXVol.minValue = 0.001f;
+        SFXVol.minValue = 0.02f;
         SFXVol.maxValue = 2;
         float initial = PlayerPrefs.GetFloat("SFXVol");
         SFXVol.value = initial;
         VolChange("SFXVol");
 
-        MusicVol.minValue = 0.001f;
+        MusicVol.minValue = 0.02f;
         MusicVol.maxValue = 2;
         initial = PlayerPrefs.GetFloat("MusicVol");
         MusicVol.value = initial;
@@ -90,16 +80,24 @@ public class VolumePanel : MonoBehaviour
         {
             vol = -80f;
         }
+
+        if (vol > -4f)
+        {
+            vol = 0f;
+        }
         mixer.SetFloat(mixerName, vol);
     }
 
     float sliderToDB(float slider)
     {
-        return 12.5182f * Mathf.Log(1.60619f * slider);
+        //return 12.5182f * Mathf.Log(1.60619f * slider);
+        return 18.5489f * Mathf.Log(0.428622f * slider);
+        //1.85489 log(0.428622 x)
     }
 
     float DBToSlider(float DB)
     {
-        return Mathf.Exp(DB / 12.5182f) / 1.60619f;
+        //return Mathf.Exp(DB / 12.5182f) / 1.60619f;
+        return Mathf.Exp(DB / 18.5489f) / 0.428622f;
     }
 }

@@ -99,11 +99,11 @@ public class FPSInput : MonoBehaviour
 
             else if(vertspeed < 0)
             {
-                if(vertspeed < -3f)
+                if(vertspeed < -4f)
                 {
                     sfx.land();
                 }
-                vertspeed = -5f;
+                vertspeed = -2f;
             }
         }
         movement.y = vertspeed;

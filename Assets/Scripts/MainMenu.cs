@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private VolumePanel volumePanel;
 
+    [SerializeField]
+    private GameObject creditsPanel;
+
+    [SerializeField]
+    private GameObject levelSelect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +27,14 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("First Level");
+        //SceneManager.LoadScene("First Level");
+        playLevel("First Level");
         Debug.Log("start");
+    }
+
+    public void playLevel(string level)
+    {
+        SceneManager.LoadScene(level);
     }
 
     public void showVolume()
@@ -34,7 +45,13 @@ public class MainMenu : MonoBehaviour
 
     public void showCredits()
     {
+        creditsPanel.SetActive(true);
         Debug.Log("credits");
+    }
+
+    public void closeCredits()
+    {
+        creditsPanel.SetActive(false);
     }
 
     public void showLevelSelect()
@@ -42,7 +59,13 @@ public class MainMenu : MonoBehaviour
         /*I think this should be
         //a panel so we don't have 
         //to deal with music changing or anytihng.*/
+        levelSelect.SetActive(true);
         Debug.Log("levels");
+    }
+
+    public void closeLevelSelect()
+    {
+        levelSelect.SetActive(false);
     }
 
     public void quit()
