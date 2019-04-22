@@ -8,11 +8,16 @@ using System.Collections;
 [AddComponentMenu("Control Script/FPS Input")]
 public class FPSInput : MonoBehaviour
 {
+    private const float EPSILON = 0.001f;
+
     public const float baseSpeed = 6.0f;
     public bool walking = false;
     public bool standing = false;
 
-    public float speed = 6.0f;
+    public float startspeed = 2.0f;
+    public float accelartion = 1.5f;
+    public float maxspeed = 6.0f; 
+    private float speed;
     public float sideSpeed = 4.0f;
     public float rotateSpeed = 2.0f;
 
@@ -53,6 +58,7 @@ public class FPSInput : MonoBehaviour
         //Player = GetComponentInChildren<Animator>();
         //rotateSpeed = 270f;
         mulligan = GetComponent<Mulligan>();
+        speed = startspeed;
     }
 
     void Update()
@@ -61,11 +67,25 @@ public class FPSInput : MonoBehaviour
 
         //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
         float deltaX = Input.GetAxis("Horizontal") * sideSpeed;
-        float deltaZ = Input.GetAxis("Vertical") * speed;
+        float zinput = Input.GetAxis("Vertical");
+        float deltaZ;
+        if(Mathf.Abs(zinput) < EPSILON)
+        {
+            speed = startspeed;
+            deltaZ = 0;
+        }
+        else
+        {
+            speed = Mathf.Clamp(speed + accelartion * Time.deltaTime, startspeed, maxspeed);
+            deltaZ = Input.GetAxis("Vertical") * speed;
+        }
+
+
+
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
         //anim = GetComponentInChildren<Animator>();
-        float EPSILON = 0.001f;
+
         if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
         {
             if (grounded && anim.GetInteger("playerState") != 3) 
