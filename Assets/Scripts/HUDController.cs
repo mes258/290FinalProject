@@ -19,6 +19,8 @@ public class HUDController : MonoBehaviour
     private bool cameraEnabled = true;
     private bool canStroke = true;
 
+    public static int totalScore = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,7 @@ public class HUDController : MonoBehaviour
         if (canStroke)
         {
             _score += toAdd;
+            totalScore = _score;
             updateScore();
         }    
     }
