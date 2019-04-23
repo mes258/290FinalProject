@@ -35,6 +35,7 @@ public class UIControl : MonoBehaviour
 
     private bool settingsEnabled = false;
     private bool showKeyBindings = false;
+    private bool showEnd = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +81,10 @@ public class UIControl : MonoBehaviour
 
             volumePanel.disableVolume();
             disableKeybindings();
-            eventSystem.SetActive(false);
+            if (!showEnd)
+            {
+                eventSystem.SetActive(false);
+            }
         }
     }
 
@@ -120,6 +124,7 @@ public class UIControl : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         eventSystem.SetActive(true);
+        showEnd = true;
         Debug.Log("Level over");
         LevelEndCanvas.enabled = true;
     }
