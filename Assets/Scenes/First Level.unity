@@ -555,6 +555,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreObjects
       objectReference: {fileID: 0}
+    - target: {fileID: 4987131329784607443, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Score: 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 1889609876425023843, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,6 +660,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9216318984246772110, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -719,11 +729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987131329784607443, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Score: 0'
       objectReference: {fileID: 0}
     - target: {fileID: 4987131330832796034, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
