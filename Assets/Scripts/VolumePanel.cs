@@ -19,6 +19,8 @@ public class VolumePanel : MonoBehaviour
     private AudioMixer mixer;
 
     private Dictionary<string, Slider> sliderNames;
+
+    private bool volumeopen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,14 +61,26 @@ public class VolumePanel : MonoBehaviour
     {
         
     }
-
+    public void toggle()
+    {
+        if(volumeopen)
+        {
+            disableVolume();
+        }
+        else
+        {
+            open();
+        }
+    }
     public void open()
     {
+        volumeopen = true;
         panel.gameObject.SetActive(true);
     }
 
     public void disableVolume()
     {
+        volumeopen = false;
         panel.gameObject.SetActive(false);
     }
 

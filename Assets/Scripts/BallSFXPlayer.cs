@@ -28,6 +28,18 @@ public class BallSFXPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject musicplayerobj = GameObject.Find("MusicPlayer");
+        if (musicplayerobj != null)
+        {
+            MusicPlayer musicplayer = musicplayerobj.GetComponent<MusicPlayer>();
+            musicplayer.playMusic(MusicPlayer.MusicType.LEVEL);
+            Debug.Log("playing music");
+        }
+        else
+        {
+            Debug.Log("No music found");
+        }
+
         AudioSource[] sources = GetComponents<AudioSource>();
         source = sources[0];
         environment = sources[1];
