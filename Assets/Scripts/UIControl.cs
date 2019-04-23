@@ -119,6 +119,7 @@ public class UIControl : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        eventSystem.SetActive(true);
         Debug.Log("Level over");
         LevelEndCanvas.enabled = true;
     }

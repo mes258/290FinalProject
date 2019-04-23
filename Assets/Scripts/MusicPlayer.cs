@@ -25,14 +25,14 @@ public class MusicPlayer : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
-        {
-            GameObject.Destroy(Instance);
-        }
-        else
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
         }
     }
 
