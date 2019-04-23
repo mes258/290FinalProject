@@ -2602,27 +2602,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!223 &8955133251011330051
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8886019516138979474}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 1
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &4422517024846162402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2757,12 +2736,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd5aed976fa8452aa99133fbe535900, type: 3}
---- !u!1 &8886019516138979474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5048135398165162352, guid: 6cd5aed976fa8452aa99133fbe535900,
-    type: 3}
-  m_PrefabInstance: {fileID: 4422517024846162402}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6531328373469864341 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7492898241571932279, guid: 6cd5aed976fa8452aa99133fbe535900,
