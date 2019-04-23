@@ -30,6 +30,9 @@ public class UIControl : MonoBehaviour
     [SerializeField]
     private VolumePanel volumePanel;
 
+    [SerializeField]
+    private GameObject eventSystem;
+
     private bool settingsEnabled = false;
     private bool showKeyBindings = false;
     // Start is called before the first frame update
@@ -53,8 +56,6 @@ public class UIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             toggleSettings();
@@ -69,6 +70,7 @@ public class UIControl : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SettingsCanvas.enabled = true;
+            eventSystem.SetActive(true);
         }
         else
         {
@@ -78,6 +80,7 @@ public class UIControl : MonoBehaviour
 
             volumePanel.disableVolume();
             disableKeybindings();
+            eventSystem.SetActive(false);
         }
     }
 
