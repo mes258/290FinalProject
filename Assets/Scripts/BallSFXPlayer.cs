@@ -25,24 +25,38 @@ public class BallSFXPlayer : MonoBehaviour
     bool blockingPlay = false;
     AudioSource source;
     AudioSource environment;
+
+    //GameObject musicplayerobj;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject musicplayerobj = GameObject.Find("MusicPlayer");
-        if (musicplayerobj != null)
-        {
-            MusicPlayer musicplayer = musicplayerobj.GetComponent<MusicPlayer>();
-            musicplayer.playMusic(MusicPlayer.MusicType.LEVEL);
-            Debug.Log("playing music");
-        }
-        else
-        {
-            Debug.Log("No music found");
-        }
+
+        requestMusic();
 
         AudioSource[] sources = GetComponents<AudioSource>();
         source = sources[0];
         environment = sources[1];
+    }
+
+    IEnumerator retry()
+    {
+        yield return new WaitForSeconds(1f);
+        requestMusic();
+    }
+
+    void requestMusic()
+    {
+        MusicPlayer musicplayer = MusicPlayer.Instance;
+        if (musicplayer == null)
+        {
+            StartCoroutine(retry());
+            Debug.Log("No music found");
+        }
+        else
+        {
+            musicplayer.playMusic(MusicPlayer.MusicType.LEVEL);
+            Debug.Log("playing music");
+        }
     }
 
     // Update is called once per frame

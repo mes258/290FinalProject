@@ -7,19 +7,28 @@ public class RequestMenuMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject musicplayerobj = GameObject.Find("MusicPlayer");
-        if (musicplayerobj != null)
+        requestMusic();
+    }
+
+    IEnumerator retry()
+    {
+        yield return new WaitForSeconds(1f);
+        requestMusic();
+    }
+
+    void requestMusic()
+    {
+        MusicPlayer musicplayer = MusicPlayer.Instance;
+        if (musicplayer == null)
         {
-            MusicPlayer musicplayer = musicplayerobj.GetComponent<MusicPlayer>();
-            musicplayer.playMusic(MusicPlayer.MusicType.MENU);
-            Debug.Log("playing music");
+            StartCoroutine(retry());
         }
         else
         {
-            Debug.Log("No music found");
+            musicplayer.playMusic(MusicPlayer.MusicType.MENU);
+            Debug.Log("playing music");
         }
     }
-
     // Update is called once per frame
     void Update()
     {
