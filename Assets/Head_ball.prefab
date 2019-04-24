@@ -468,8 +468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivityHor: 9
   sensitivityVert: 9
-  minimumVert: -45
-  maximumVert: 45
+  minimumVert: -65
+  maximumVert: 65
   backwardsCamera: {fileID: 3351370499123041004}
 --- !u!1 &6434691510769622416
 GameObject:
