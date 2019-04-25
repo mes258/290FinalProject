@@ -16,6 +16,9 @@ public class HUDController : MonoBehaviour
     [SerializeField]
     private RawImage camera;
 
+    [SerializeField]
+    private HighScoreLogger highscore;
+
     private bool cameraEnabled = true;
     private bool canStroke = true;
 
@@ -58,7 +61,9 @@ public class HUDController : MonoBehaviour
     public void endHole()
     {
         canStroke = false;
+        highscore.SetNewScore(_score);
     }
+
     public void addScore(int toAdd)
     {
         if (canStroke)
