@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     public void startGame()
     {
         //SceneManager.LoadScene("First Level");
-        playLevel("First Level");
+        playLevel("Level1");
         Debug.Log("start");
     }
 

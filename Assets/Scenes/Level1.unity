@@ -489,6 +489,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreObjects
       objectReference: {fileID: 0}
+    - target: {fileID: 4987131329784607443, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Score: 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 1889609876425023843, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -664,11 +669,6 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key0.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4987131329784607443, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Score: 0'
-      objectReference: {fileID: 0}
     - target: {fileID: 4987131330832796034, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_IgnoreReversedGraphics
@@ -682,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 2786158751563705086, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: AnotherLevel
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 506991366957797110, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
