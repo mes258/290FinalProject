@@ -34,9 +34,9 @@ public class Hole : MonoBehaviour
         if (other.gameObject == Ball)
         {
             Debug.Log("BALL");
+            hud.endHole();
             uiController.showLevelEnd();
             ballSFX.playHoleEnter();
-            hud.endHole();
         }
         else
         {

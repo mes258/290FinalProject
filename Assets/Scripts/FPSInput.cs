@@ -19,7 +19,11 @@ public class FPSInput : MonoBehaviour
     public float maxspeed = 6.0f; 
     private float speed;
     public float sideSpeed = 4.0f;
-    public float rotateSpeed = 2.0f;
+
+    public float minrotateSpeed = 2.0f;
+    public float maxrotateSpeed = 270f;
+    private float rotateSpeed;
+    public float rotateAccel = 75f;
 
     private float vertspeed = 0;
     public float gravity = -9.8f;
@@ -59,6 +63,7 @@ public class FPSInput : MonoBehaviour
         //rotateSpeed = 270f;
         mulligan = GetComponent<Mulligan>();
         speed = startspeed;
+        rotateSpeed = minrotateSpeed;
     }
 
     void Update()
@@ -72,11 +77,13 @@ public class FPSInput : MonoBehaviour
         if(Mathf.Abs(zinput) < EPSILON)
         {
             speed = startspeed;
+            rotateSpeed = minrotateSpeed;
             deltaZ = 0;
         }
         else
         {
             speed = Mathf.Clamp(speed + accelartion * Time.deltaTime, startspeed, maxspeed);
+            rotateSpeed = Mathf.Clamp(rotateSpeed + rotateAccel * Time.deltaTime, minrotateSpeed, maxrotateSpeed);
             deltaZ = Input.GetAxis("Vertical") * speed;
         }
 
