@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        //SceneManager.LoadScene("First Level");
+        //SceneManager.LoadScene("Level1");
         playLevel("Level1");
         Debug.Log("start");
     }

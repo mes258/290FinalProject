@@ -34,7 +34,14 @@ public class HUDController : MonoBehaviour
         _score = 0;
         updateScore();
         setPower(0);
-        bestScoreLabel.text = "Best Score: " + highscore.lookupScore();
+        if(highscore.lookupScore() == -1)
+        {
+            bestScoreLabel.text = "No Best Score Yet";
+        }
+        else
+        {
+            bestScoreLabel.text = "Best Score: \t" + highscore.lookupScore();
+        }
     }
 
     // Update is called once per frame
