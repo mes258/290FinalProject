@@ -1448,7 +1448,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 35}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 60, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8572534503216952770
 CanvasRenderer:
@@ -1478,8 +1478,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7649231f1fd394b7b9eef81888190697, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1590,6 +1590,7 @@ MonoBehaviour:
   menuObj: {fileID: 8572534503197808688}
   keyBindings: {fileID: 2259936591838657264}
   volumePanel: {fileID: 6531328373469864341}
+  eventSystem: {fileID: 0}
 --- !u!1 &8572534503610694579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,7 +2265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart Level
+  m_Text: 
 --- !u!1 &8572534504115523194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,6 +2610,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8572534504131967689}
     m_Modifications:
+    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_Name
+      value: VolumeController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6923748522068654246, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2664,41 +2675,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_Name
-      value: VolumeController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592010915576604652, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2363256794009322700, guid: 6cd5aed976fa8452aa99133fbe535900,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2733,6 +2709,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669073733269445779, guid: 6cd5aed976fa8452aa99133fbe535900,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd5aed976fa8452aa99133fbe535900, type: 3}
