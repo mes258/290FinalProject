@@ -329,6 +329,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2357877939929165034, guid: ad4929ceaaa9d465eaad6f86406dfecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744933739659129861, guid: ad4929ceaaa9d465eaad6f86406dfecd,
+        type: 3}
+      propertyPath: kickball
+      value: 
+      objectReference: {fileID: 4987131330677558163}
     - target: {fileID: 6180751014723882688, guid: ad4929ceaaa9d465eaad6f86406dfecd,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -392,16 +402,6 @@ PrefabInstance:
     - target: {fileID: 180078929281015077, guid: ad4929ceaaa9d465eaad6f86406dfecd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744933739659129861, guid: ad4929ceaaa9d465eaad6f86406dfecd,
-        type: 3}
-      propertyPath: kickball
-      value: 
-      objectReference: {fileID: 4987131330677558163}
-    - target: {fileID: 2357877939929165034, guid: ad4929ceaaa9d465eaad6f86406dfecd,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -632,6 +632,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 610309742501910518, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: highscore
+      value: 
+      objectReference: {fileID: 1712178227450104554}
+    - target: {fileID: 7178655456891722761, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7178655456947505658, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
         type: 3}
       propertyPath: m_IsActive
@@ -817,6 +827,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 9216318983638720900}
+    - target: {fileID: 6849870878894104112, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6486982392350382909, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -997,11 +1012,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraImg
       objectReference: {fileID: 0}
-    - target: {fileID: 610309742501910518, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
-        type: 3}
-      propertyPath: highscore
-      value: 
-      objectReference: {fileID: 1712178227450104554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d909cde1fb5c415599f7e1feb8ec73a, type: 3}
 --- !u!1 &8279893881901948941 stripped
@@ -1089,6 +1099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
+    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_Name
+      value: UISceneController
+      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926264, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1144,6 +1159,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8572534504131967693, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926265, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: rearViewCamera
@@ -1159,16 +1179,6 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 7712417874812527700}
-    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_Name
-      value: UISceneController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8572534504131967693, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8572534503610694579, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_IsActive
@@ -1291,6 +1301,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
+    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole
+      objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983723, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1345,11 +1360,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole
       objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983700, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}

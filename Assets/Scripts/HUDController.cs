@@ -8,6 +8,10 @@ public class HUDController : MonoBehaviour
     private int _score;
     [SerializeField]
     private Text scoreLabel;
+
+    [SerializeField]
+    private Text bestScoreLabel;
+
     [SerializeField]
     private GameObject powerMeter;
 
@@ -30,6 +34,7 @@ public class HUDController : MonoBehaviour
         _score = 0;
         updateScore();
         setPower(0);
+        bestScoreLabel.text = "Best Score: " + highscore.lookupScore();
     }
 
     // Update is called once per frame
