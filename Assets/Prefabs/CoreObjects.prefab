@@ -1022,6 +1022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraImg
       objectReference: {fileID: 0}
+    - target: {fileID: 3839325732573418795, guid: 6d909cde1fb5c415599f7e1feb8ec73a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.199951
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d909cde1fb5c415599f7e1feb8ec73a, type: 3}
 --- !u!1 &8279893881901948941 stripped
@@ -1109,11 +1114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
-    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_Name
-      value: UISceneController
-      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926264, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1169,11 +1169,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8572534504131967693, guid: d62d72eec65ca408aad19faf45628886,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8572534503405926265, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: rearViewCamera
@@ -1189,6 +1184,16 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 7712417874812527700}
+    - target: {fileID: 8572534503405926266, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_Name
+      value: UISceneController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572534504131967693, guid: d62d72eec65ca408aad19faf45628886,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8572534503610694579, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_IsActive
@@ -1212,17 +1217,17 @@ PrefabInstance:
     - target: {fileID: 8572534503197808702, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.3137255
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8572534503197808702, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.5254902
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8572534503197808702, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.91372555
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8572534503197808702, guid: d62d72eec65ca408aad19faf45628886,
         type: 3}
@@ -1311,11 +1316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889609876425023843}
     m_Modifications:
-    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole
-      objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983723, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1370,6 +1370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828440775542983721, guid: 969ac7cf4b8594d9f921846126d4f862,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole
       objectReference: {fileID: 0}
     - target: {fileID: 6828440775542983700, guid: 969ac7cf4b8594d9f921846126d4f862,
         type: 3}
