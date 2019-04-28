@@ -998,22 +998,22 @@ PrefabInstance:
       value: 'Hole 4: Par 60
 
 
-        Tip: Press C to hide and show the rear-view camera.'
+        Good Luck!!'
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 67
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 14
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 14
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,27 +266,29 @@ PrefabInstance:
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_text
-      value: 'Level 2: Par 3'
+      value: 'Level 2: Par 4
+
+        Tip: Press F to cancel a shot.'
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 14
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29dca40f812f458e9628ee826f39f7e, type: 3}
@@ -725,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 9216318984246772110, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
@@ -740,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 2786158751142002614, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}

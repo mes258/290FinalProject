@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8018838, g: 0.8980802, b: 0.95754224, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1077,21 +1077,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level4
       objectReference: {fileID: 0}
-    - target: {fileID: 506991366957797110, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6661874058607157623, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 828396710514689445, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4987131330832796045, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_IsActive
@@ -1102,9 +1087,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 828396710514689445, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4987131331304743436, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 506991366957797110, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661874058607157623, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7256440203265477804, guid: 609ca5c2383734c57aed35e652c67366,
@@ -1347,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_text
-      value: 'Hole 2: Par 4
+      value: 'Hole 3: Par 5
 
 
         Tip: Press M for a mulligan'
