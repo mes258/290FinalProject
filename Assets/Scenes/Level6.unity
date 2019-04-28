@@ -1386,7 +1386,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1781,12 +1781,12 @@ PrefabInstance:
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 4987131330677558172, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
