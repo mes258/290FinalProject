@@ -268,22 +268,22 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Level 2: Par 4
 
-        Tip: Press F to cancel a shot.'
+        Tip: Avoid the plants, they hurt!'
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 45
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}

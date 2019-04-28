@@ -904,22 +904,22 @@ PrefabInstance:
       value: 'Hole 4: Par 6
 
 
-        Tip: Aim for the palm trees'
+        Tip: Press F to cancel a shot.'
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 42
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
