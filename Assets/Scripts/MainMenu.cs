@@ -78,6 +78,12 @@ public class MainMenu : MonoBehaviour
         Debug.Log("levels");
     }
 
+    public void showScoreCard()
+    {
+        SceneManager.LoadScene("ScoreCard");
+        Debug.Log("scorecard");
+    }
+
     //public void closeLevelSelect()
     //{
     //    levelSelect.SetActive(false);
