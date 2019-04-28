@@ -105,12 +105,14 @@ public class KickBall : MonoBehaviour
         {
             //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
             //resetPower();
+            anim.SetInteger("playerState", 3);
             hud.setPower(0);
             //_score += 1;
             //scoreLabel.text = "Strokes: " + _score.ToString();
             //updateScore();
             hud.addScore(1);
             playerSFX.playMiss();
+            StartCoroutine(delay());
         }
 
         if(Input.GetKeyDown(KeyCode.F))
