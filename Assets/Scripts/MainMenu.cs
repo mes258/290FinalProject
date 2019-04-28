@@ -40,9 +40,24 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void continueGame()
+    {
+        int level = 1;
+        int score = HighScoreLogger.LookupScore(level);
+        while (score != -1)
+        {
+            level++;
+            score = HighScoreLogger.LookupScore(level);
+        }
+        Debug.Log(score);
+        Debug.Log(level);
+
+        playLevel("Level" + level);
+        Debug.Log("continue");
+    }
+
     public void startGame()
     {
-        //SceneManager.LoadScene("Level1");
         playLevel("Level1");
         Debug.Log("start");
     }
