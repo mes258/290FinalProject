@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
     {
         int level = 1;
         int score = HighScoreLogger.LookupScore(level);
-        while (score != -1)
+        while (score != -1 && level < 9)
         {
             level++;
             score = HighScoreLogger.LookupScore(level);
