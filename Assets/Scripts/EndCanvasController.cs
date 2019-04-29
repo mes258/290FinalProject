@@ -8,6 +8,8 @@ public class EndCanvasController : MonoBehaviour
 {
     int[] pars = {3, 4, 5, 7, 5, 12, 14, 10, 40};
     int totalPar = 100;
+
+    [SerializeField] Text FinishedMessage;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class EndCanvasController : MonoBehaviour
         centerAlignedLabel.alignment = TextAnchor.MiddleCenter;
         //centerAlignedLabel.stretchWidth = true;
         centerAlignedLabel.fixedWidth = 100;
-        centerAlignedLabel.fontSize = 20;
+        centerAlignedLabel.fontSize = 30;
 
         GUILayout.BeginVertical(GUILayout.Width(300));
 
@@ -78,11 +80,19 @@ public class EndCanvasController : MonoBehaviour
         if (allHolesFinished)
         {
             GUILayout.Label("<b>" + totalScore.ToString() + "</b>", centerAlignedLabel);
+            if(totalPar > totalScore)
+            {
+                FinishedMessage.text = "Congratulations! You have won the game.";
+            }
+            else
+            {
+                FinishedMessage.text = "Keep playing to get below par!";
+            }
         }
         else
         {
             GUILayout.Label("<b>N/A</b>", centerAlignedLabel);
-
+            FinishedMessage.text = "Finish all the holes to beat the game!";
         }
         GUILayout.EndHorizontal();
 
