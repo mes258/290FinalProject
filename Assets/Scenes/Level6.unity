@@ -1863,11 +1863,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level7
       objectReference: {fileID: 0}
-    - target: {fileID: 4987131330832796045, guid: 609ca5c2383734c57aed35e652c67366,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2786158750784288388, guid: 609ca5c2383734c57aed35e652c67366,
         type: 3}
       propertyPath: m_IsActive
@@ -1882,6 +1877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987131330832796045, guid: 609ca5c2383734c57aed35e652c67366,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609ca5c2383734c57aed35e652c67366, type: 3}
@@ -2234,14 +2234,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Welcome to the mountains!
 
-        Hole 6: Par 8
+        Hole 6: Par 12
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 40
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}

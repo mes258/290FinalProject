@@ -926,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 2731665018852726721, guid: e29dca40f812f458e9628ee826f39f7e,
         type: 3}
       propertyPath: m_text
-      value: 'Hole 9: Par 60
+      value: 'Hole 9: Par 40
 
 
         Good Luck!!'
