@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class EndCanvasController : MonoBehaviour
 {
-    int[] pars = { 3, 4, 5, 6, 5, 8, 14, 10, 60};
-
+    int[] pars = {3, 4, 5, 7, 5, 12, 14, 10, 40};
+    int totalPar = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +49,22 @@ public class EndCanvasController : MonoBehaviour
         GUILayout.Label("<b>Par</b>", centerAlignedLabel);
         GUILayout.Label("<b>Score</b>", centerAlignedLabel);
         GUILayout.EndHorizontal();
+        int totalScore = 0;
+        bool allHolesFinished = true;
         for (var i = 1; i < 10; i++)
         {
             int score = HighScoreLogger.LookupScore(i);
-            string scoretext = score == -1 ? "None" : score.ToString();
+            totalScore += score;
+            string scoretext = "";
+            if (score == -1)
+            {
+                scoretext = "None";
+                allHolesFinished = false;
+            }
+            else
+            {
+                scoretext = score.ToString();
+            }
 
             GUILayout.BeginHorizontal();
             GUILayout.Label(i + "", centerAlignedLabel);
@@ -60,6 +72,20 @@ public class EndCanvasController : MonoBehaviour
             GUILayout.Label(scoretext, centerAlignedLabel);
             GUILayout.EndHorizontal();
         }
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("<b>Total:</b>", centerAlignedLabel);
+        GUILayout.Label("<b>" + totalPar.ToString() + "</b>", centerAlignedLabel);
+        if (allHolesFinished)
+        {
+            GUILayout.Label("<b>" + totalScore.ToString() + "</b>", centerAlignedLabel);
+        }
+        else
+        {
+            GUILayout.Label("<b>N/A</b>", centerAlignedLabel);
+
+        }
+        GUILayout.EndHorizontal();
+
         GUILayout.EndVertical();
     }
 
@@ -71,5 +97,10 @@ public class EndCanvasController : MonoBehaviour
     public void backToLevelSelect()
     {
         SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void resetScores()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
