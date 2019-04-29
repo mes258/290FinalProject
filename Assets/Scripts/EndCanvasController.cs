@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EndCanvasController : MonoBehaviour
 {
-    int[] pars = { 3, 4, 5, 6, 5, 8, 14, 0, 60};
+    int[] pars = { 3, 4, 5, 6, 5, 8, 14, 10, 60};
 
     // Start is called before the first frame update
     void Start()
