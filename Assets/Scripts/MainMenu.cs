@@ -26,18 +26,8 @@ public class MainMenu : MonoBehaviour
         {
             musicplayer = musicplayerobj.GetComponent<MusicPlayer>();
             musicplayer.playMusic(MusicPlayer.MusicType.MENU);
-            Debug.Log("playing music");
-        }
-        else
-        {
-            Debug.Log("No music found");
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 
     public void continueGame()
@@ -55,17 +45,13 @@ public class MainMenu : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(score);
-        Debug.Log(level);
 
         playLevel("Level" + level);
-        Debug.Log("continue");
     }
 
     public void startGame()
     {
         playLevel("Level1");
-        Debug.Log("start");
     }
 
     public void playLevel(string level)
@@ -76,13 +62,11 @@ public class MainMenu : MonoBehaviour
     public void showVolume()
     {
         volumePanel.toggle();
-        Debug.Log("volume");
     }
 
     public void showCredits()
     {
         creditsPanel.SetActive(true);
-        Debug.Log("credits");
     }
 
     public void closeCredits()
@@ -92,17 +76,12 @@ public class MainMenu : MonoBehaviour
 
     public void showLevelSelect()
     {
-        /*I think this should be
-        //a panel so we don't have 
-        //to deal with music changing or anytihng.*/
         SceneManager.LoadScene("LevelSelect");
-        Debug.Log("levels");
     }
 
     public void showScoreCard()
     {
         SceneManager.LoadScene("ScoreCard");
-        Debug.Log("scorecard");
     }
 
     //public void closeLevelSelect()
@@ -113,7 +92,6 @@ public class MainMenu : MonoBehaviour
     public void quit()
     {
         Application.Quit();
-        Debug.Log("quit");
     }
 
 

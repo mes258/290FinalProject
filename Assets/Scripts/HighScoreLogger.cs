@@ -29,7 +29,6 @@ public class HighScoreLogger : MonoBehaviour
 
     public void SetNewScore(int score)
     {
-
         if (!PlayerPrefs.HasKey(currentKey()) || PlayerPrefs.GetInt(currentKey()) > score)
         {
             PlayerPrefs.SetInt(currentKey(), score);

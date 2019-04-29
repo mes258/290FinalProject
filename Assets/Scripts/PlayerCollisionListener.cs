@@ -20,22 +20,8 @@ public class PlayerCollisionListener : MonoBehaviour
         sfx = GetComponent<PlayerSFXPlayer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        //Debug.Log(col.gameObject);
-        //if (hit.relativeVelocity.y > 3f)
-        //{
-        //    //sfx.playGroundHit();
-        //    //sfx.playJumpLand();
-        //}
-
-
         if (canhit && hit.collider.gameObject.layer == ENEMYLAYER)
         {
             hud.addScore(1);

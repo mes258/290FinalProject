@@ -50,12 +50,10 @@ public class BallSFXPlayer : MonoBehaviour
         if (musicplayer == null)
         {
             StartCoroutine(retry());
-            Debug.Log("No music found");
         }
         else
         {
             musicplayer.playMusic(MusicPlayer.MusicType.LEVEL);
-            Debug.Log("playing music");
         }
     }
 
@@ -79,28 +77,21 @@ public class BallSFXPlayer : MonoBehaviour
 
     public void playGroundHit()
     {
-        //if (!blockingPlay)
-        //{
-            source.clip = groundHitSound;
-            source.Play();
-        //}
+        source.clip = groundHitSound;
+        source.Play();
+
     }
 
     public void playHoleEnter()
     {
-        //blockingPlay = true;
         environment.clip = holeEnter;
         environment.Play();
-        //StartCoroutine(delay());
     }
 
     public void playMulligan()
     {
-        //if(!blockingPlay)
-        //{
             environment.clip = mulligan;
             environment.Play();
-        //}
     }
 
     //IEnumerator delay()

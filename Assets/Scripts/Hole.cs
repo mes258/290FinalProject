@@ -16,31 +16,13 @@ public class Hole : MonoBehaviour
     [SerializeField]
     private BallSFXPlayer ballSFX;
 
-    //CapsuleCollider holeCollider;
-    // Start is called before the first frame update
-    void Start()
-    { 
-        //holeCollider = gameObject.GetComponent<CapsuleCollider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == Ball)
         {
-            Debug.Log("BALL");
             hud.endHole();
             uiController.showLevelEnd();
             ballSFX.playHoleEnter();
-        }
-        else
-        {
-            Debug.Log("PLAYER");
         }
     }
 }

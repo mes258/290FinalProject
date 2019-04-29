@@ -26,7 +26,6 @@ public class RequestMenuMusic : MonoBehaviour
         else
         {
             musicplayer.playMusic(MusicPlayer.MusicType.MENU);
-            Debug.Log("playing music");
         }
     }
     // Update is called once per frame

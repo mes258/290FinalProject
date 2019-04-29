@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class KickBall : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
-    //[SerializeField] private GameObject powerMeter;
-    //[SerializeField] private Text scoreLabel;
     [SerializeField] private BallSFXPlayer ballSFX;
     [SerializeField] private PlayerSFXPlayer playerSFX;
     [SerializeField] private MouseLook camera;
@@ -18,10 +16,7 @@ public class KickBall : MonoBehaviour
     public float kickYComponent = 1000f;
 
     private float maxPower = 5;
-
-    //private Vector3 lastKnownPlayerLocation;
-    //private Vector3 lastKnownBallLocation;
-
+    
     private bool cancelled = false;
 
     private float timeSpacePressed = 0;
@@ -34,12 +29,6 @@ public class KickBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-        //_score = 0;
-        //scoreLabel.text = "Strokes: " + _score.ToString();
-        //lastKnownPlayerLocation = transform.localPosition;
-        //lastKnownBallLocation = ball.transform.localPosition;
-
         hud = GetComponent<HUDController>();
         mulligan = GetComponent<Mulligan>();
     }
@@ -58,15 +47,12 @@ public class KickBall : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !cancelled)
         {
             hud.setPower(Mathf.Min(Time.time - timeSpacePressed, maxPower));
-            //powerMeter.transform.localScale = new Vector3(1.0f, Mathf.Min(Time.time - timeSpacePressed, maxPower), 1.0f);
         }
         if (Input.GetKeyUp(KeyCode.Space) && IsBallNearby() && isBallForward() && !cancelled)
         {
             playerSFX.stopPower();
             anim.SetInteger("playerState", 3);
             hud.setPower(0);
-            //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-            //resetPower();
 
             //log positions
             mulligan.SetPlayerPos(transform.position);
@@ -74,11 +60,7 @@ public class KickBall : MonoBehaviour
 
             //make direction
             float diff = Mathf.Min(Time.time - timeSpacePressed, maxPower);
-            //Vector3 kickPosition = transform.position;
-            //kickPosition.y = kickPosition.y - 1.2f;
-            //Vector3 direction = (ball.transform.position - kickPosition).normalized;
             Vector3 direction = generateKickDirection();
-            Debug.Log(direction);
             ball.GetComponent<Rigidbody>().AddForce(direction * kickForce * diff);
 
             camera.shake(diff / maxPower);
@@ -92,45 +74,26 @@ public class KickBall : MonoBehaviour
                 ballSFX.playSmallHit();
             }
 
-            //_score += 1;
             hud.addScore(1);
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
-            //anim.SetInteger("playerState", 0);
             StartCoroutine(delay());
 
         }
 
         else if (Input.GetKeyUp(KeyCode.Space) && !cancelled)
         {
-            //powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-            //resetPower();
             anim.SetInteger("playerState", 3);
             hud.setPower(0);
-            //_score += 1;
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
             hud.addScore(1);
             playerSFX.playMiss();
             StartCoroutine(delay());
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             cancelled = true;
-            //resetPower();
             hud.setPower(0);
             playerSFX.playCancel();
         }
-
-        /*  
-        if (Input.GetKey(KeyCode.Space) && IsBallNearby())
-        {
-            Vector3 kickPosition = transform.position;
-            kickPosition.y = kickPosition.y - 1.2f;
-            Vector3 direction = (ball.transform.position - kickPosition).normalized;
-            ball.GetComponent<Rigidbody>().AddForce( direction * kickForce );
-        }*/
     }
 
     IEnumerator delay()
@@ -138,13 +101,6 @@ public class KickBall : MonoBehaviour
         yield return new WaitForSeconds(1f);
         anim.SetInteger("playerState", 0);
     }
-
-    //void resetPower()
-    //{
-    //    powerMeter.transform.localScale = new Vector3(1.0f, 0f, 1.0f);
-    //}
-
-
 
     bool IsBallNearby()
     {
@@ -175,8 +131,6 @@ public class KickBall : MonoBehaviour
         Vector2 playerToBall = getPlayerToBall();
         Vector2 playerForward = getPlayerForward();
 
-        Debug.Log(Vector2.Angle(playerToBall, playerForward));
-        Debug.Log(Vector2.Angle(playerToBall, playerForward) < canKickAngle);
         return Vector2.Angle(playerToBall, playerForward) < canKickAngle;
     }
 
@@ -184,12 +138,6 @@ public class KickBall : MonoBehaviour
     {
         Vector2 playerToBall = getPlayerToBall();
         Vector2 playerForward = getPlayerForward();
-
-        Debug.Log(playerToBall);
-        Debug.Log(playerForward);
-
-       
-
         Vector2 dirInPlane = (playerForward * 0.5f + playerToBall * 0.5f).normalized;
         return new Vector3(dirInPlane.x, kickYComponent, dirInPlane.y);
     }

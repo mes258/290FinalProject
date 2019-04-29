@@ -32,7 +32,7 @@ public class EndCanvasController : MonoBehaviour
 
         Rect windowRect = new Rect(windowX, windowY, windowWidth, windowHeight);
 
-        windowRect = GUILayout.Window(0, windowRect, AddScores, "<b>Score Card</b>");
+        windowRect = GUILayout.Window(0, windowRect, AddScores, "");
     }
 
     // Make the contents of the window
@@ -40,9 +40,8 @@ public class EndCanvasController : MonoBehaviour
     {
         var centerAlignedLabel = new GUIStyle(GUI.skin.label);
         centerAlignedLabel.alignment = TextAnchor.MiddleCenter;
-        //centerAlignedLabel.stretchWidth = true;
         centerAlignedLabel.fixedWidth = 100;
-        centerAlignedLabel.fontSize = 30;
+        centerAlignedLabel.fontSize = 35;
 
         GUILayout.BeginVertical(GUILayout.Width(300));
 

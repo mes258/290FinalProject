@@ -7,12 +7,6 @@ using UnityEngine.Audio;
 
 public class UIControl : MonoBehaviour
 {
-    //[SerializeField]
-    //private GameObject rearViewCamera;
-
-    //[SerializeField]
-    //private GameObject rearViewCameraBorder;
-
     [SerializeField]
     private GameObject levelEndGameObj;
     private Canvas LevelEndCanvas;
@@ -39,9 +33,6 @@ public class UIControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //border = rearViewCameraBorder.GetComponent<Image>();
-        //camera = rearViewCamera.GetComponent<RawImage>();
-
         SettingsCanvas = SettingsGameObj.GetComponent<Canvas>();
         SettingsCanvas.enabled = false;
 
@@ -50,8 +41,6 @@ public class UIControl : MonoBehaviour
 
         volumePanel.disableVolume();
         disableKeybindings();
-
-
     }
 
     // Update is called once per frame
@@ -125,7 +114,6 @@ public class UIControl : MonoBehaviour
         Cursor.visible = true;
         eventSystem.SetActive(true);
         showEnd = true;
-        Debug.Log("Level over");
         LevelEndCanvas.enabled = true;
     }
 

@@ -21,6 +21,7 @@ public class VolumePanel : MonoBehaviour
     private Dictionary<string, Slider> sliderNames;
 
     private bool volumeopen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,7 +89,6 @@ public class VolumePanel : MonoBehaviour
     {
         float vol = sliderNames[mixerName].value;
         PlayerPrefs.SetFloat(mixerName, vol);
-        Debug.Log("Settings " + mixerName + " to " + vol);
         vol = sliderToDB(vol);
         if (vol < -75f)
         {
@@ -104,14 +104,11 @@ public class VolumePanel : MonoBehaviour
 
     float sliderToDB(float slider)
     {
-        //return 12.5182f * Mathf.Log(1.60619f * slider);
         return 18.5489f * Mathf.Log(0.428622f * slider);
-        //1.85489 log(0.428622 x)
     }
 
     float DBToSlider(float DB)
     {
-        //return Mathf.Exp(DB / 12.5182f) / 1.60619f;
         return Mathf.Exp(DB / 18.5489f) / 0.428622f;
     }
 }

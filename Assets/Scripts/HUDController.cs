@@ -50,8 +50,6 @@ public class HUDController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             toggleRearCamera();
-
-            //Debug.Log(enabled);
         }
     }
 

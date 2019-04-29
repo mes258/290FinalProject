@@ -43,12 +43,6 @@ public class Mulligan : MonoBehaviour
             StartCoroutine(mulliganDelay());
             shouldFall = false;
             return true;
-
-            //Debug.Log("set Velocity");
-            //_score += 1;
-
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
         }
 
         else
@@ -92,9 +86,6 @@ public class Mulligan : MonoBehaviour
         if (shouldFall && ball.transform.position.y < 0)
         {
             ball.transform.position = lastKnownBallLocation;
-            //_score += 2;
-            //scoreLabel.text = "Strokes: " + _score.ToString();
-            //updateScore();
 
             Rigidbody ballBody = ball.GetComponent<Rigidbody>();
             ballBody.velocity = Vector3.zero;

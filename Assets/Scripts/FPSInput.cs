@@ -32,11 +32,6 @@ public class FPSInput : MonoBehaviour
 
     private CharacterController _charController;
 
-    //private bool airborn = false;
-
-
-    //private Animator Player;
-
     [SerializeField]
     private Animator anim;
 
@@ -45,22 +40,9 @@ public class FPSInput : MonoBehaviour
 
     private Mulligan mulligan;
 
-    void Awake()
-    {
-        //Keep Player speed constant
-        //Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
-    }
-    void OnDestroy()
-    {
-        //Keep Player speed constant
-        //Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
-    }
-
     void Start()
     {
         _charController = GetComponent<CharacterController>();
-        //Player = GetComponentInChildren<Animator>();
-        //rotateSpeed = 270f;
         mulligan = GetComponent<Mulligan>();
         speed = startspeed;
         rotateSpeed = minrotateSpeed;
@@ -69,8 +51,6 @@ public class FPSInput : MonoBehaviour
     void Update()
     {
         bool grounded = isGrounded();
-
-        //transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
         float deltaX = Input.GetAxis("Horizontal") * sideSpeed;
         float zinput = Input.GetAxis("Vertical");
         float deltaZ;
@@ -87,11 +67,8 @@ public class FPSInput : MonoBehaviour
             deltaZ = Input.GetAxis("Vertical") * speed;
         }
 
-
-
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
-        //anim = GetComponentInChildren<Animator>();
 
         if (System.Math.Abs(deltaX) < EPSILON && System.Math.Abs(deltaZ) < EPSILON)
         {
@@ -101,7 +78,6 @@ public class FPSInput : MonoBehaviour
                 sfx.stopWalk();
             }
 
-            //Debug.Log("stopped");
         }
         else
         {
@@ -112,12 +88,10 @@ public class FPSInput : MonoBehaviour
             }
         }
         vertspeed = Mathf.Clamp(vertspeed - (gravity * Time.deltaTime), maxFall, 100f);
-        //Debug.Log(vertspeed);
         if(grounded)
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                //Debug.Log("Jdown");
                 vertspeed = jumpHeight;
                 anim.SetInteger("playerState", 2);
                 sfx.stopWalk();

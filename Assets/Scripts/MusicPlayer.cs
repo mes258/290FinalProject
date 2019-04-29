@@ -45,7 +45,6 @@ public class MusicPlayer : MonoBehaviour
             if (typeIn == MusicType.MENU)
             {
                 playTrack(menuMusic);
-                Debug.Log("playing menu");
             }
             else if(typeIn == MusicType.LEVEL || !isawake)
             {
@@ -66,11 +65,5 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         audioplayer.loop = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
