@@ -26,7 +26,7 @@ public class EndCanvasController : MonoBehaviour
     {
         var h = 0.3f; // proportional height (0..1)
         var windowX = (float)((Screen.width / 2) - 150f);
-        var windowY = (float)(Screen.height * (1 - (h + 0.2))) / 2;
+        var windowY = (float)(Screen.height * (1 - (h + 0.3))) / 2;
         var windowWidth = 300f;
         var windowHeight = (float)(Screen.height * h);
 
@@ -41,7 +41,7 @@ public class EndCanvasController : MonoBehaviour
         var centerAlignedLabel = new GUIStyle(GUI.skin.label);
         centerAlignedLabel.alignment = TextAnchor.MiddleCenter;
         centerAlignedLabel.fixedWidth = 100;
-        centerAlignedLabel.fontSize = 35;
+        centerAlignedLabel.fontSize = 25;
 
         GUILayout.BeginVertical(GUILayout.Width(300));
 
